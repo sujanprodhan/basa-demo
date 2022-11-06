@@ -1,0 +1,295 @@
+@import "styles/variables.scss";
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.header-bg {
+  position: relative;
+}
+
+.headerArea {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #004737;
+  width: calc(100% - 40px);
+  height: 100vh;
+  animation-name: bgBannerAm;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  // border: 1px solid red;
+}
+
+.headerMenu,
+.bottomSliderMenu {
+  // border: 1px solid black;
+  background: #004737;
+  height: 120px;
+}
+
+.headerMenuLeft {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: $leftMenuWidth;
+  height: 120px;
+  border-radius: 0 0 30px 0;
+  background: white;
+  animation-name: leftMenu;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+
+  ul {
+    padding: 0 20px 0 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    top: calc(50% - 20px);
+    right: 0;
+    li {
+      padding: 10px 15px;
+      font-size: 20px;
+      color: #004737;
+      cursor: pointer;
+      white-space: nowrap;
+      margin: 0 4px;
+    }
+  }
+}
+
+.logoText {
+  font-size: 30px;
+  color: #004737;
+  font-weight: bold;
+}
+
+.headerMenuRight {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: $leftMenuWidth;
+  height: 120px;
+  border-radius: 0 0 0 30px;
+  background: white;
+  animation-name: rightMenu;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+
+  ul {
+    padding: 0 0 0 20px;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    top: calc(50% - 20px);
+    left: 0;
+    li {
+      padding: 10px 15px;
+      font-size: 20px;
+      color: #004737;
+      cursor: pointer;
+      white-space: nowrap;
+      margin: 0 4px;
+    }
+  }
+}
+
+.bgButtonGreen {
+  background: rgba(lightgreen, 0.4);
+  padding: 15px;
+  border-radius: 25px;
+}
+.bgButtonGreenDark {
+  background: green;
+  padding: 15px;
+  border-radius: 25px;
+}
+
+.headerTitle {
+  position: absolute;
+  top: 0;
+  left: $leftMenuWidth;
+  width: calc($homeTitleWidth - 140px);
+  height: 120px;
+  background-color: #004737;
+  animation-name: headerTitle;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 4s;
+  color: #f5f5f5;
+  font-size: 50px;
+  opacity: 0;
+  border-radius: 30px 30px 0 0;
+  text-align: center;
+  padding: 50px 50px;
+  font-weight: bold;
+}
+
+/* Bottom Menu Banner */
+.bottomLeftMenu {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 140px;
+  height: 120px;
+  border-radius: 0 30px 0 0;
+  background: white;
+  animation-name: bottomLeftMenu;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottomRightMenu {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 120px;
+  border-radius: 30px;
+  background: white;
+  animation-name: bottomRightMenuAm;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+}
+.bottomSlider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  .bottomSliderItem {
+    white-space: nowrap;
+    margin: 0 10px;
+    padding-top: 7px;
+    border-top: 2px solid #ccc;
+    color: #ccc;
+    span {
+      word-break: break-all;
+    }
+    .sliderActive {
+      color: #444;
+    }
+  }
+}
+
+.centerBoxAnimation {
+  height: 10vw;
+  width: 10vw;
+  background: lightgreen;
+  animation-name: centerBoxAnimation;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  position: absolute;
+  bottom: -200px;
+  font-size: 18px;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+@keyframes bgBannerAm {
+  0% {
+    margin: 0;
+    margin: 120px 0 10px;
+  }
+
+  50% {
+    border-radius: 30px;
+    padding-top: 10px;
+    margin: 120px 0 20px;
+  }
+
+  100% {
+    border-radius: 30px;
+    margin: 120px 20px 20px;
+    height: 78.915vh;
+  }
+}
+
+@keyframes leftMenu {
+  0% {
+    width: 0;
+    z-index: 1;
+  }
+
+  100% {
+    width: $leftMenuWidth;
+    z-index: 2;
+    height: 120px;
+  }
+}
+//
+@keyframes bottomLeftMenu {
+  0% {
+    width: 0;
+    z-index: 1;
+  }
+
+  100% {
+    width: $bottomLeftMenu;
+    z-index: 2;
+    height: 120px;
+  }
+}
+
+@keyframes rightMenu {
+  0% {
+    width: 0;
+    z-index: 1;
+  }
+
+  100% {
+    width: $leftMenuWidth;
+    z-index: 2;
+  }
+}
+
+@keyframes headerTitle {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    z-index: 4;
+  }
+}
+
+@keyframes bottomRightMenuAm {
+  0% {
+    width: 0;
+    z-index: 1;
+  }
+
+  100% {
+    width: $bottomRightWidth;
+    z-index: 2;
+  }
+}
+
+@keyframes centerBoxAnimation {
+  0% {
+  }
+  100% {
+    bottom: unset;
+    left: 50%;
+    top: 50%;
+    transform: rotate(720deg) translate(-50%, -50%);
+  }
+}

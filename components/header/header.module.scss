@@ -1,0 +1,894 @@
+@import "styles/variables.scss";
+@import "styles/mixin.scss";
+
+.sticky {
+  transition: all 0.6s ease-in-out;
+  position: fixed;
+  background: white;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 3px 6px 12px #ccc;
+  animation-name: stickyTop;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+
+  .headerMenuLeftSticky {
+    background-image: url("/images/logo.png");
+    background-color: white;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+    width: 250px;
+    height: 80px;
+    margin-left: 20px;
+  }
+
+  .headerMenuRightSticky {
+    ul {
+      position: relative;
+      margin-right: 20px;
+      list-style: none;
+      display: flex;
+      align-items: center;
+
+      @include devices(sp) {
+        flex-direction: column;
+        right: 0px;
+        top: 10px;
+      }
+
+      li {
+        padding: 10px 15px;
+        font-size: 13px;
+        color: $bgPrimary;
+        cursor: pointer;
+        white-space: nowrap;
+        margin: 0 4px;
+        color: #001217;
+
+        i {
+          padding-right: 7px;
+        }
+
+        select {
+          height: 37px;
+        }
+
+        &:first-child,
+        &:last-child {
+          @include devices(tablet) {
+            display: none;
+          }
+
+          @include devices(sp) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mainAnimation {
+  position: relative;
+  font-family: "Noto Sans Bengali", sans-serif;
+  margin-bottom: 180px;
+
+  // @include devices(sp){
+  //   background-image: url('/images/bannersp.svg') !important;
+  //   background-size: cover;
+  //   background-position: left center;
+  // }
+}
+
+.header {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  @include devices(pc) {
+    background-color: $bgPrimary;
+    animation-name: headerBGAnimation;
+    animation-duration: 1.6s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+  }
+
+  @include devices(tablet) {
+    background-color: $bgPrimary;
+    animation-name: headerBGAnimationSP;
+    animation-duration: 1.6s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+    height: 450px;
+  }
+}
+
+@keyframes headerBGAnimation {
+  0% {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  70% {
+    border-radius: 0;
+  }
+
+  100% {
+    margin: 110px 10px 70px;
+    border-radius: 20px;
+    width: calc(100vw - 40px);
+    height: calc(100vh - 140px - 100px);
+  }
+}
+
+@keyframes headerBGAnimationSP {
+  0% {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  70% {
+    border-radius: 0;
+  }
+
+  100% {
+    margin: 0px 10px 70px;
+    border-radius: 10px;
+    width: calc(100vw - 20px);
+    // height: calc(100vh - 140px - 100px);
+  }
+}
+
+.header-bg {
+  position: relative;
+}
+
+.bottomSliderMenu {
+  background: $bgPrimary;
+  height: $height;
+}
+
+.headerMenu {
+  animation-name: headerMenuBgAm;
+  animation-duration: $animationDuration;
+  animation-fill-mode: forwards;
+  position: absolute;
+  opacity: 0;
+
+  @include devices(tablet) {
+    opacity: 1;
+  }
+}
+
+@keyframes headerMenuBgAm {
+  0% {
+    width: 100%;
+    height: $height;
+    border-radius: 0;
+  }
+
+  100% {
+    background: $bgPrimary;
+    height: $height;
+    width: 100%;
+    top: -$height;
+    opacity: 1;
+  }
+}
+
+.headerMenuLeft {
+  position: absolute;
+  left: 0;
+  top: calc(0px - $height - 10px);
+  width: $leftMenuWidth;
+  height: calc($height + 10px);
+  border-radius: 0 0 20px 0;
+  opacity: 0;
+  animation-duration: $animationDuration;
+  animation-fill-mode: forwards;
+  animation-delay: $animationDelay;
+
+  @include devices(pc) {
+    background-image: url("/images/logo.png");
+    background-color: white;
+    background-size: 280px 50px;
+    background-repeat: no-repeat;
+    animation-name: leftMenuAm;
+  }
+
+  @include devices(tablet) {
+    animation-name: leftMenuAmSP;
+    border-radius: 0;
+    width: 80px;
+    height: 70px;
+    top: 10px;
+    left: 10px;
+    z-index: 8;
+    opacity: 1;
+    background-image: url("/images/logo-sp.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-color: transparent;
+  }
+}
+
+@keyframes leftMenuAm {
+  0% {
+    width: 0;
+    z-index: 1;
+  }
+
+  100% {
+    width: $leftMenuWidth;
+    z-index: 2;
+
+    opacity: 1;
+  }
+}
+
+@keyframes leftMenuAmSP {
+  0% {
+    z-index: 1;
+  }
+
+  100% {
+    z-index: 8;
+    opacity: 1;
+  }
+}
+
+.logoText {
+  font-size: 30px;
+  color: $bgPrimary;
+  font-weight: bold;
+}
+
+.headerMenuRight {
+  position: absolute;
+  left: unset;
+  right: 0;
+  top: calc(0px - $height - 10px);
+  width: 0;
+  height: calc($height + 10px);
+  border-radius: 0 0 0 20px;
+  background: white;
+  animation-name: rightMenuAm;
+  animation-duration: $animationDuration;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+  animation-delay: $animationDelay;
+  z-index: 4;
+
+  ul {
+    padding: 0 0 0 20px;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    position: absolute;
+
+    // top: calc(50% - 20px);
+    top: -3px;
+    right: 20px;
+    animation-name: rightMenuAmList;
+    animation-duration: $animationDuration;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+    animation-delay: $animationDelay;
+    opacity: 0;
+
+    @include devices(tablet) {
+      flex-direction: column;
+      right: 0px;
+      top: 100px;
+      z-index: 9;
+    }
+
+    li {
+      padding: 10px 15px;
+      font-size: 13px;
+      color: $bgPrimary;
+      cursor: pointer;
+      white-space: nowrap;
+      margin: 0 4px;
+      color: #001217;
+
+      i {
+        padding-right: 7px;
+      }
+
+      select {
+        height: 37px;
+      }
+
+      &:first-child,
+      &:last-child {
+        @include devices(tablet) {
+          display: none;
+        }
+
+        @include devices(sp) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.selectLang {
+  border: 1px solid #cdcdcd;
+  border-radius: 12px;
+  padding: 6px 8px;
+  outline: none;
+}
+
+.headerTitle {
+  position: absolute;
+  // calc($height + 30px)
+  top: -100px;
+  left: 0;
+  height: $height;
+  background-color: unset;
+  animation-name: headerTitleAm;
+  animation-duration: $animationDuration;
+  animation-delay: $animationDelay;
+  animation-fill-mode: forwards;
+  color: #f5f5f5;
+  font-size: 20px;
+  text-align: center;
+  z-index: 4;
+  display: block;
+
+  @include devices(tablet) {
+    display: none;
+  }
+}
+
+@keyframes headerTitleAm {
+  0% {
+    left: 0;
+    width: calc(100% + 110px);
+    padding: 0;
+  }
+
+  100% {
+    // $height + 30px
+    top: -100px;
+    left: 0;
+    height: $height;
+    z-index: 4;
+    left: $leftMenuWidth;
+    width: calc($homeTitleWidth - 140px);
+    padding: 0px 50px;
+    font-weight: bold;
+    border-top: 30px solid $bgPrimary;
+    border-radius: 20px 20px 0 0;
+    background: $bgPrimary;
+  }
+}
+
+.headerTitleTextTop {
+  font-size: 16px;
+  color: white;
+  padding-bottom: 15px;
+  white-space: nowrap;
+  position: relative;
+  top: 0px;
+  text-align: center;
+  display: block;
+
+  @include devices(tablet) {
+    display: none;
+  }
+}
+
+.headerTitleText {
+  position: relative;
+  animation-duration: $animationDuration;
+  animation-delay: $animationDelay;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  white-space: nowrap;
+  text-align: center;
+  top: 0px;
+  font-size: 26px;
+  display: block;
+
+  @include devices(pc) {
+    animation-name: headerTitleText;
+  }
+
+  @include devices(spc) {
+    animation-name: headerTitleText;
+    font-size: 20px;
+  }
+
+  @include devices(tablet) {
+    display: none;
+  }
+}
+
+@keyframes headerTitleText {
+  0% {
+    opacity: 0;
+    width: 0;
+    font-size: 2px;
+  }
+
+  100% {
+    opacity: 1;
+    width: 100%;
+    font-size: 1.5vw;
+  }
+}
+
+@keyframes headerTitleTextSP {
+  0% {
+    opacity: 0;
+    width: 0;
+    font-size: 2px;
+  }
+
+  100% {
+    opacity: 1;
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+/* Bottom Menu Banner */
+.bottomLeftMenu {
+  position: absolute;
+  left: 0;
+  bottom: -50px;
+  width: 0;
+  height: 0;
+  border-radius: 0 20px 0 0;
+  background: white;
+  animation-name: bottomLeftMenu;
+  animation-duration: $animationDuration;
+  animation-delay: $animationDelay;
+  animation-fill-mode: forwards;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  @include devices(tablet) {
+    width: 100px !important;
+  }
+  @include devices(sp) {
+    width: 70px !important;
+  }
+  @include devices(ssp) {
+    width: 50px !important;
+  }
+  .iconBorder {
+    border: 1px solid black;
+    padding: 10px 20px;
+    border-radius: 100%;
+    cursor: pointer;
+    @include devices(sp) {
+      padding: 0px 10px;
+      position: absolute;
+      left: 0;
+      top: 20px;
+    }
+  }
+}
+
+//
+@keyframes bottomLeftMenu {
+  0% {
+    width: 0;
+    z-index: 1;
+    opacity: 0;
+  }
+
+  100% {
+    width: $bottomLeftMenu;
+    z-index: 2;
+    height: $bottomHeight;
+    opacity: 1;
+  }
+}
+
+.bottomRightMenu {
+  position: absolute;
+  right: 0px;
+  bottom: -80px;
+  width: 0;
+  height: 0;
+
+  background: white;
+  animation-name: bottomRightMenuAm;
+  animation-duration: $animationDuration;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+  animation-delay: $animationDelay;
+  @include devices(tablet) {
+    width: 200px !important;
+  }
+  @include devices(sp) {
+    width: 70px !important;
+  }
+  @include devices(ssp) {
+    width: 50px !important;
+  }
+}
+
+@keyframes bottomRightMenuAm {
+  0% {
+    width: 0;
+    z-index: 1;
+  }
+
+  100% {
+    width: $bottomRightWidth;
+    height: calc($bottomHeight + 30px);
+    z-index: 3;
+    border-radius: 20px 0 0 0;
+  }
+}
+
+.bottomSlider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35px;
+
+  @include devices(sp) {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  .bottomSliderItem {
+    white-space: nowrap;
+    margin: 0 10px;
+    padding-top: 7px;
+    border-top: 2px solid #ccc;
+    color: #ccc;
+    font-size: 14px;
+    cursor: pointer;
+    @include devices(pc) {
+      min-width: 60px;
+    }
+    @include devices(tablet) {
+      min-width: 40px;
+    }
+    span {
+      word-break: break-all;
+      &:nth-of-type(2) {
+        @include devices(sp) {
+          display: none;
+        }
+      }
+    }
+
+    @include devices(sp) {
+      max-width: 80px;
+      white-space: unset;
+      border-top: unset;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  .sliderActive {
+    border-top: 2px solid $colorPrimary;
+    color: $colorPrimary;
+    span {
+      &:nth-of-type(2) {
+        @include devices(sp) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.bgButtonGreen {
+  background: #d4ffe9;
+  border-radius: 25px;
+}
+
+.bgButtonGreenDark {
+  background: #4ed890;
+  border-radius: 25px;
+  color: #001217 !important;
+}
+
+.sliderArea {
+  position: absolute;
+  top: 30%;
+  width: 80%;
+  height: 60vh;
+  z-index: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @include devices(tablet) {
+    top: 340px;
+    width: 100%;
+    height: 45vh;
+  }
+
+  @include devices(sp) {
+    top: 320px;
+    width: 100%;
+    height: 43vh;
+    overflow: hidden;
+    // > div{
+    //   height: 500px !important;
+    //   width: 400px !important;
+
+    //   svg{
+    //     height: 500px !important;
+    //     g, path{
+    //       height: 500px !important;
+    //     }
+    //   }
+    // }
+  }
+}
+
+@keyframes rightMenuAm {
+  0% {
+    z-index: 1;
+    right: -200px;
+    width: 0;
+  }
+
+  100% {
+    width: $leftMenuWidth;
+    z-index: 2;
+    right: 0;
+    justify-content: flex-end;
+  }
+}
+
+@keyframes rightMenuAmList {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.bottomRound {
+  position: absolute;
+  bottom: -30px;
+  left: $bottomLeftMenu;
+  height: 30px;
+  animation-name: bottomRoundAm;
+  animation-duration: $animationDuration;
+  animation-delay: $animationDelay;
+  animation-fill-mode: forwards;
+  padding: 0;
+  margin: 0;
+  z-index: 4;
+  @include devices(tablet) {
+    width: calc(100% - 300px) !important;
+    left: 100px !important;
+  }
+  @include devices(sp) {
+    width: calc(100% - 140px) !important;
+    left: 70px !important;
+  }
+
+  @include devices(ssp) {
+    bottom: -20px !important;
+    width: calc(100% - 100px) !important;
+    left: 50px !important;
+  }
+}
+
+@keyframes bottomRoundAm {
+  0% {
+    left: 0;
+    width: calc(100%);
+    padding: 0;
+  }
+
+  100% {
+    bottom: -30px;
+    height: 30px;
+    left: calc($bottomLeftMenu);
+    width: calc(68vw - 40px);
+    font-weight: bold;
+    border-top: 30px solid $bgPrimary;
+    border-radius: 0 0 20px 20px;
+    background: $bgPrimary;
+    padding: 0;
+  }
+}
+
+.bottomArea {
+  height: 70px;
+  background: $bgPrimary;
+  width: 100%;
+  position: relative;
+  top: calc(100% - 1px);
+  @include devices(ssp) {
+    // background: red;
+    height: 70px;
+  }
+}
+
+@keyframes stickyTop {
+  0% {
+    top: -110px;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+.headerTitleSP {
+  @include devices(pc) {
+    display: none;
+  }
+
+  @include devices(tablet) {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 100px;
+
+    .headerTitleTextTopSP {
+      color: #cdcdcd;
+      text-align: center;
+      font-size: 3.5vw;
+    }
+
+    .headerTitleTextSP {
+      color: #f8f8f8;
+      text-align: center;
+      font-size: 4.1vw;
+      margin-top: 10px;
+    }
+  }
+}
+@keyframes smMenuBgAm {
+  0% {
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+  }
+
+  100% {
+    top: 0;
+    left: 0;
+    width: calc(100%);
+    height: 100vh;
+  }
+}
+
+.mobileMenu {
+  @include devices(pc) {
+    display: none;
+  }
+  @include devices(tablet) {
+    display: block;
+    width: calc(100%);
+    height: 100vh;
+    background: #032019;
+    z-index: 10;
+    position: fixed;
+    margin: auto;
+    animation-name: smMenuBgAm;
+    animation-duration: $animationDuration;
+    animation-fill-mode: forwards;
+  }
+  .close {
+    width: 40px;
+    height: 40px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 11;
+    border-radius: 100%;
+    color: $colorPrimary;
+    i {
+      font-size: 32px;
+    }
+  }
+  .spMenuList {
+    margin-top: 20px;
+    margin-left: 20px;
+    ul {
+      opacity: 0;
+      list-style: none;
+      margin-top: 10px;
+      padding: 0;
+      margin: 50px 0 0;
+      animation-name: ulListAm;
+      animation-duration: $animationDuration;
+      animation-delay: 0.7s;
+      animation-fill-mode: forwards;
+    }
+    li {
+      white-space: nowrap;
+      color: white;
+      margin-bottom: 20px;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      i {
+        margin-right: 15px;
+      }
+    }
+  }
+  .menuTwoSide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+  }
+}
+.mobileClose {
+  @include devices(tablet) {
+    animation-name: spBgClose;
+    animation-duration: $animationDuration;
+    animation-fill-mode: forwards;
+  }
+  .spMenuList,
+  .close {
+    display: none;
+  }
+}
+
+@keyframes spBgClose {
+  0% {
+    width: calc(100% - 10px);
+    height: 100vh;
+    top: 0;
+    left: 0;
+  }
+
+  100% {
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+  }
+}
+
+@keyframes ulListAm {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.onlyMobile {
+  display: none;
+  @include devices(tablet) {
+    display: block;
+  }
+}
