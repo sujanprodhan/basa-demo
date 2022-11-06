@@ -233,7 +233,7 @@ export default function VideoGallary() {
       window.addEventListener("scroll", onScroll, { passive: true });
       return () => window.removeEventListener("scroll", onScroll);
     }
-  }, []);
+  }, [inView]);
 
   return (
     <div className={style.galarySection} ref={ref} id="photoDiv">

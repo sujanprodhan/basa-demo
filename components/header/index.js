@@ -34,6 +34,7 @@ export default function Home() {
 
   const [scrolled, setScrolled] = useState(false);
   var lastScrollTop = 0;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleScroll = () => {
     const offset = window.scrollY;
     var st = window.pageYOffset || document.documentElement.scrollTop;
@@ -47,7 +48,7 @@ export default function Home() {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-  }, []);
+  }, [handleScroll, scrolled]);
 
   const mobileMenu = () => {
     setHasMenuOpened(true);
