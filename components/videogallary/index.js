@@ -10,37 +10,37 @@ import ReactImageVideoLightbox from "react-image-video-lightbox";
 //type: photo / video
 const vidoes = [
   {
-    thumb: "/videos/thumb1.png",
+    thumb: "/images/videos/thumb1.png",
     url: "https://www.youtube.com/embed/RbQwhF21qVY",
     type: "video",
     id: 1,
   },
   {
-    thumb: "/videos/thumb2.png",
+    thumb: "/images/videos/thumb2.png",
     url: "https://www.youtube.com/embed/2vaIx55bXFI",
     type: "video",
     id: 2,
   },
   {
-    thumb: "/videos/thumb3.png",
+    thumb: "/images/videos/thumb3.png",
     url: "https://www.youtube.com/embed/9QRRGN_VgXU",
     type: "video",
     id: 3,
   },
   {
-    thumb: "/videos/thumb4.jpg",
+    thumb: "/images/videos/thumb4.jpg",
     url: "https://www.youtube.com/watch?v=RbQwhF21qVY",
     type: "video",
     id: 4,
   },
   {
-    thumb: "/videos/thumb5.jpg",
+    thumb: "/images/videos/thumb5.jpg",
     url: "https://www.youtube.com/embed/kY8w233zNdY",
     type: "video",
     id: 5,
   },
   {
-    thumb: "/videos/thumb6.jpg",
+    thumb: "/images/videos/thumb6.jpg",
     url: "https://www.youtube.com/embed/kY8w233zNdY",
     type: "video",
     id: 6,
