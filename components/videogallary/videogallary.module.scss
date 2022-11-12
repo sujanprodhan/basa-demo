@@ -3,6 +3,7 @@
 
 .videoGallarySection {
   position: relative;
+  font-family: $fontFamily;
   background-image: url("/images/videos/video-gallary-bg.svg");
   background-size: cover;
   background-position: top center;
@@ -20,6 +21,7 @@
   }
 
   .title {
+    font-family: $fontFamily;
     position: relative;
     top: -12px;
     text-align: center;

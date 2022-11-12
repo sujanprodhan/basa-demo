@@ -9,6 +9,7 @@ $bgActive: #f4f4f4;
 }
 .feature {
   position: relative;
+  font-family: $fontFamily;
   background-image: url("/images/feature/bg.jpg");
   background-size: 98vw;
   background-size: contain;
@@ -417,7 +418,7 @@ $bgActive: #f4f4f4;
     z-index: 4;
     top: 210px;
     left: 36%;
-    font-size: 20px;
+    font-size: 22px;
     color: white;
     @include devices(tablet) {
       top: 490px;
@@ -431,7 +432,8 @@ $bgActive: #f4f4f4;
     z-index: 4;
     top: 260px;
     left: 36%;
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 1.8;
     color: white;
     max-width: 40%;
     text-align: justify;

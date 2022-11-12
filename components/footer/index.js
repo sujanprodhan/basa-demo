@@ -1,39 +1,45 @@
 /* eslint-disable jsx-a11y/alt-text */
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import style from "./footer.module.scss";
 import { InView, useInView } from "react-intersection-observer";
 
 export default function Footer() {
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    function handleResize() {
+      setWidth(window.innerWidth);
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
   return (
     <>
       <InView triggerOnce={true}>
         {({ inView, ref, entry }) => (
           <div ref={ref}>
-            <div
-              className={
-                !inView
-                  ? style.footerSection
-                  : style.footerSection + " " + style.startAnimation
-              }
-            >
+            <div className={style.footerSection}>
               <div className={style.footer}>
                 <div
                   className={
                     !inView
-                      ? style.footerContent
-                      : style.footerContent + " " + style.startAnimation
+                      ? style.footerLogo
+                      : style.footerLogo + " " + style.startAnimation
                   }
                 >
-                  <div
-                    className={
-                      !inView
-                        ? style.footerLogo
-                        : style.footerLogo + " " + style.startAnimation2
-                    }
-                  >
-                    <Image src="/images/logo.png" height={80} width={330} />
-                  </div>
+                  <Image
+                    src="/images/footer/footer-logo.png"
+                    height={200}
+                    width={350}
+                  />
                 </div>
 
                 <div
@@ -44,7 +50,7 @@ export default function Footer() {
                   }
                 >
                   <i className="fa-sharp fa-solid fa-square-phone"></i>
-                  01740-XXXXXX
+                  ০১৭১১-১১ ২২ ৩৩
                 </div>
 
                 <div
@@ -54,13 +60,69 @@ export default function Footer() {
                       : style.link + " " + style.startAnimation3
                   }
                 >
-                  <a href="">
-                    <Image
-                      width={36}
-                      height={36}
-                      src="/images/footer/facebook.png"
-                    />
-                  </a>
+                  {width > 768 ? (
+                    <>
+                      <a href="">
+                        <Image
+                          width={54}
+                          height={54}
+                          src="/images/footer/facebook.png"
+                        />
+                      </a>
+                      <a href="">
+                        <Image
+                          width={54}
+                          height={54}
+                          src="/images/footer/google.png"
+                        />
+                      </a>
+                      <a href="">
+                        <Image
+                          width={54}
+                          height={54}
+                          src="/images/footer/youtube.png"
+                        />
+                      </a>
+                      <a href="">
+                        <Image
+                          width={54}
+                          height={54}
+                          src="/images/footer/twitter.png"
+                        />
+                      </a>
+                    </>
+                  ) : (
+                    <>
+                      <a href="">
+                        <Image
+                          width={36}
+                          height={36}
+                          src="/images/footer/facebook-sp.png"
+                        />
+                      </a>
+                      <a href="">
+                        <Image
+                          width={36}
+                          height={36}
+                          src="/images/footer/google-sp.png"
+                        />
+                      </a>
+                      <a href="">
+                        <Image
+                          width={36}
+                          height={36}
+                          src="/images/footer/youtube-sp.png"
+                        />
+                      </a>
+                      <a href="">
+                        <Image
+                          width={36}
+                          height={36}
+                          src="/images/footer/twitter-sp.png"
+                        />
+                      </a>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
@@ -72,7 +134,7 @@ export default function Footer() {
                   : style.copyright + " " + style.startAnimation3
               }
             >
-              কপিরাইত &copy; ২০২২ সর্বস্বত্ব সংরক্ষিত গ্ণপ্রজাতন্ত্রী বাংলাদেশ
+              কপিরাইট &copy; ২০২২ সর্বস্বত্ব সংরক্ষিত গ্ণপ্রজাতন্ত্রী বাংলাদেশ
               সরকার
             </div>
           </div>

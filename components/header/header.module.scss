@@ -2,6 +2,7 @@
 @import "styles/mixin.scss";
 
 .sticky {
+  font-family: $fontFamily;
   transition: all 0.6s ease-in-out;
   position: fixed;
   background: white;
@@ -93,7 +94,7 @@
   height: 100vh;
   margin: 0;
   padding: 0;
-
+  font-family: $fontFamily;
   @include devices(pc) {
     background-color: $bgPrimary;
     animation-name: headerBGAnimation;
@@ -310,6 +311,7 @@
 
       select {
         height: 37px;
+        font-family: $fontFamily;
       }
 
       &:first-child,

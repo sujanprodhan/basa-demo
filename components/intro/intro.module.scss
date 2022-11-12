@@ -3,6 +3,7 @@
 
 .intro {
   position: relative;
+  font-family: $fontFamily;
   width: 100%;
   .introBg {
     position: relative;
@@ -118,7 +119,7 @@
         left: 10%;
         right: 30px;
         max-width: 90%;
-        font-size: 16px;
+        font-size: 20px;
       }
     }
 
@@ -137,7 +138,7 @@
       @include devices(spc) {
         top: 185px;
         left: 15%;
-        font-size: 16px;
+        font-size: 18px;
       }
 
       @include devices(tablet) {
@@ -147,11 +148,11 @@
 
       @include devices(sp) {
         width: 90%;
-        top: 18%;
+        top: 20%;
         left: 10%;
         right: 30px;
         max-width: 95%;
-        font-size: 13px;
+        font-size: 16px;
       }
     }
 
@@ -193,13 +194,13 @@
       // }
 
       @include devices(sp) {
-        top: 26%;
+        top: 28%;
         overflow: hidden;
         width: 82%;
         display: -webkit-box;
         -webkit-line-clamp: 14;
         -webkit-box-orient: vertical;
-        font-size: 12px;
+        font-size: 16px;
       }
 
       @include devices(ssp) {
@@ -208,7 +209,7 @@
         display: -webkit-box;
         -webkit-line-clamp: 14;
         -webkit-box-orient: vertical;
-        font-size: 12px;
+        font-size: 16px;
       }
     }
   }
@@ -274,7 +275,7 @@
     list-style: none;
 
     li {
-      font-size: 14px;
+      font-size: 18px;
       cursor: pointer;
       color: rgba($colorPrimary, 0.7);
 
