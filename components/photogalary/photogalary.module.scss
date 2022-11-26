@@ -103,8 +103,10 @@
         }
         img {
           opacity: 0.5;
-          height: 300px;
           transform: scale(1.1);
+          @include devices(ssp) {
+            height: 340px !important;
+          }
         }
       }
     }
