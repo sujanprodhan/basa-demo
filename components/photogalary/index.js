@@ -8,7 +8,7 @@ import style from "./photogalary.module.scss";
 import ReactImageVideoLightbox from "react-image-video-lightbox";
 
 //type: photo / video
-const vidoes = [
+const photos = [
   {
     data: [
       {
@@ -64,43 +64,43 @@ const vidoes = [
       },
     ],
   },
-  {
-    data: [
-      {
-        thumb: "/images/galary/galary6-min.JPG",
-        url: "/images/galary/galary6-min.JPG",
-        type: "photo",
-        id: 7,
-        text: "বাংলাদেশ অ্যাডমিনিস্ট্রেটিভ সার্ভিস এসোসিয়েশন  ফটো গ্যালারী",
-      },
-      {
-        thumb: "/images/galary/galary7-min.JPG",
-        url: "/images/galary/galary7-min.JPG",
-        type: "photo",
-        id: 8,
-        text: "বাংলাদেশ অ্যাডমিনিস্ট্রেটিভ সার্ভিস এসোসিয়েশন  ফটো গ্যালারী",
-      },
-    ],
-  },
+  // {
+  //   data: [
+  //     {
+  //       thumb: "/images/galary/galary6-min.JPG",
+  //       url: "/images/galary/galary6-min.JPG",
+  //       type: "photo",
+  //       id: 7,
+  //       text: "বাংলাদেশ অ্যাডমিনিস্ট্রেটিভ সার্ভিস এসোসিয়েশন  ফটো গ্যালারী",
+  //     },
+  //     {
+  //       thumb: "/images/galary/galary7-min.JPG",
+  //       url: "/images/galary/galary7-min.JPG",
+  //       type: "photo",
+  //       id: 8,
+  //       text: "বাংলাদেশ অ্যাডমিনিস্ট্রেটিভ সার্ভিস এসোসিয়েশন  ফটো গ্যালারী",
+  //     },
+  //   ],
+  // },
 
-  {
-    data: [
-      {
-        thumb: "/images/galary/galary8-min.JPG",
-        url: "/images/galary/galary8-min.JPG",
-        type: "photo",
-        id: 10,
-        text: "বাংলাদেশ অ্যাডমিনিস্ট্রেটিভ সার্ভিস এসোসিয়েশন  ফটো গ্যালারী",
-      },
-      {
-        thumb: "/images/galary/galary9-min.JPG",
-        url: "/images/galary/galary9-min.JPG",
-        type: "photo",
-        id: 11,
-        text: "বাংলাদেশ অ্যাডমিনিস্ট্রেটিভ সার্ভিস এসোসিয়েশন  ফটো গ্যালারী",
-      },
-    ],
-  },
+  // {
+  //   data: [
+  //     {
+  //       thumb: "/images/galary/galary8-min.JPG",
+  //       url: "/images/galary/galary8-min.JPG",
+  //       type: "photo",
+  //       id: 10,
+  //       text: "বাংলাদেশ অ্যাডমিনিস্ট্রেটিভ সার্ভিস এসোসিয়েশন  ফটো গ্যালারী",
+  //     },
+  //     {
+  //       thumb: "/images/galary/galary9-min.JPG",
+  //       url: "/images/galary/galary9-min.JPG",
+  //       type: "photo",
+  //       id: 11,
+  //       text: "বাংলাদেশ অ্যাডমিনিস্ট্রেটিভ সার্ভিস এসোসিয়েশন  ফটো গ্যালারী",
+  //     },
+  //   ],
+  // },
 ];
 
 const imagesList = [
@@ -156,7 +156,7 @@ const imagesList = [
   },
 ];
 export default function VideoGallary() {
-  const [videoList, setVideosList] = useState(vidoes);
+  const [photoList, setPhotoList] = useState(photos);
   const [popup, setPopup] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   // const [offset, setOffset] = useState(0);
@@ -251,7 +251,7 @@ export default function VideoGallary() {
               ফটো গ্যালারী
               <div className={style.seeMoreGalary}>
                 <Link href="">
-                  <a target="_blank"> আরও দেখুন </a>
+                  <a target="_blank"> বিস্তারিত </a>
                 </Link>
               </div>
             </div>
@@ -260,8 +260,8 @@ export default function VideoGallary() {
       </InView>
 
       <div className={style.galary} id="galaryList">
-        {videoList &&
-          videoList.map((item, index) => (
+        {photoList &&
+          photoList.map((item, index) => (
             <div
               key={item.data && item.data[0].id}
               className={style.galaryItem}
@@ -276,8 +276,8 @@ export default function VideoGallary() {
                   layout="responsive"
                   objectFit="cover"
                   objectPosition="top left"
-                  width="20vw"
-                  height="30vh"
+                  width="300px"
+                  height="300px"
                   className={style.photoAlbum}
                 />
                 <div className={style.hoverBg1}>গ্যালারী</div>
@@ -295,8 +295,8 @@ export default function VideoGallary() {
                   layout="responsive"
                   objectFit="cover"
                   objectPosition="top left"
-                  width="20vw"
-                  height="30vh"
+                  width="300px"
+                  height="300px"
                   className={style.photoAlbum}
                 />
                 <div className={style.hoverBg2}>গ্যালারী</div>

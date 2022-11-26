@@ -41,7 +41,8 @@
   align-items: center;
   flex-wrap: wrap;
   width: 97vw;
-  row-gap: 15px;
+  // row-gap: 15px;
+  row-gap: 5px;
   margin-bottom: 120px;
   //  padding-bottom: 100px;
   padding-top: 100px;
@@ -51,10 +52,10 @@
   }
 
   .galaryItem {
-    width: calc(20% - 15px);
+    // width: calc(20% - 15px);
+    width: calc(33% - 0px);
     border-radius: 10px;
     position: relative;
-
     &:nth-child(even) {
       // margin-top: -90px;
     }
@@ -68,7 +69,8 @@
 
     .image1 {
       position: relative;
-      margin-bottom: 20px;
+      // margin-bottom: 20px;
+      margin-bottom: 5px;
 
       .hoverBg1,
       .hover1 {
@@ -86,8 +88,6 @@
           position: absolute;
           top: 20px;
           left: 50px;
-          // text-align: center;
-          // align-items: center;
           padding-top: 20px;
           padding-left: 20px;
           color: $colorPrimary;
@@ -103,6 +103,8 @@
         }
         img {
           opacity: 0.5;
+          height: 300px;
+          transform: scale(1.1);
         }
       }
     }
@@ -110,7 +112,6 @@
     .image2 {
       position: relative;
       margin-bottom: 20px;
-
       .hoverBg2,
       .hover2 {
         display: none;
@@ -144,6 +145,7 @@
         }
         img {
           opacity: 0.5;
+          transform: scale(1.1);
         }
       }
     }
@@ -155,7 +157,8 @@
     }
 
     img {
-      border-radius: 40px;
+      // border-radius: 40px;
+      border-radius: 10px;
       transition: all 0.6s ease-in-out;
 
       @include devices(sp) {
@@ -163,7 +166,7 @@
       }
     }
 
-    &:nth-child(5) {
+    &:nth-child(3) {
       @include devices(sp) {
         display: none;
       }

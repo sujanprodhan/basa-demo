@@ -234,7 +234,7 @@ export default function Home() {
 
           <div className={style.headerTitle}>
             <div className={style.headerTitleTextTop}>
-              - ১৯ শে এপ্রিল ১৯৮১ সাল থেকে...
+              <Image src="/images/basa-logo-sp-old.jpg" alt="logo" height={50} width={50} />
             </div>
             <div className={style.headerTitleText}>
               বাংলাদেশ অ্যাডমিনিস্ট্রেটিভ সার্ভিস এসোসিয়েশন
@@ -324,8 +324,8 @@ export default function Home() {
                   className={
                     currentIndex === 0
                       ? style.bottomSliderItem +
-                        " nextSlider " +
-                        style.sliderActive
+                      " nextSlider " +
+                      style.sliderActive
                       : style.bottomSliderItem + " nextSlider "
                   }
                   onClick={() => setCurrentIndex(0)}
@@ -338,8 +338,8 @@ export default function Home() {
                   className={
                     currentIndex === 1
                       ? style.bottomSliderItem +
-                        " nextSlider " +
-                        style.sliderActive
+                      " nextSlider " +
+                      style.sliderActive
                       : style.bottomSliderItem + " nextSlider "
                   }
                   onClick={() => setCurrentIndex(1)}
@@ -352,8 +352,8 @@ export default function Home() {
                   className={
                     currentIndex === 2
                       ? style.bottomSliderItem +
-                        " nextSlider " +
-                        style.sliderActive
+                      " nextSlider " +
+                      style.sliderActive
                       : style.bottomSliderItem + " nextSlider "
                   }
                   onClick={() => setCurrentIndex(2)}

@@ -19,17 +19,15 @@ export default function Story() {
           <div ref={ref} className={style.storyWrapper}>
             <div className={style.tabMenu}>
               <div
-                className={`${style.tabMenuItem} ${
-                  !menuActiveIndex && style.tabMenuItemActive
-                }`}
+                className={`${style.tabMenuItem} ${!menuActiveIndex && style.tabMenuItemActive
+                  }`}
                 onClick={() => resetAnimation(0)}
               >
                 সাম্প্রতিক কার্যক্রম
               </div>
               <div
-                className={`${style.tabMenuItem} ${
-                  menuActiveIndex && style.tabMenuItemActive
-                }`}
+                className={`${style.tabMenuItem} ${menuActiveIndex && style.tabMenuItemActive
+                  }`}
                 onClick={() => resetAnimation(1)}
               >
                 সফলতার গল্প
@@ -80,7 +78,7 @@ export default function Story() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        আরও দেখুন
+                        বিস্তারিত
                       </a>
                     </div>
                   </div>
@@ -104,7 +102,7 @@ export default function Story() {
 
                     <div className={style.seeMore}>
                       <Link href="https://www.kalerkantho.com/online/country-news/2022/10/06/1190695?fbclid=IwAR0etFWjKCVlgXa_VyDXFOormB2I_6W1bLA9BmpptixkHlmSRJhF7LLFV_A">
-                        <a target="_blank"> আরও দেখুন... </a>
+                        <a target="_blank"> বিস্তারিত </a>
                       </Link>
                     </div>
                   </div>
@@ -129,7 +127,7 @@ export default function Story() {
 
                     <div className={style.seeMore}>
                       <Link href="https://www.bd-pratidin.com/chittagong-pratidin/2022/06/09/777422?fbclid=IwAR3dWli2luPC8j7BEJVWFaY2X7_X3pdgua_5ZHB2y5gCrB7I1mx4cPLk-M0">
-                        <a target="_blank"> আরও দেখুন... </a>
+                        <a target="_blank"> বিস্তারিত </a>
                       </Link>
                     </div>
                   </div>
@@ -156,7 +154,7 @@ export default function Story() {
 
                     <div className={style.seeMore + " " + style.marginLeftLink}>
                       <Link href="https://www.prothomalo.com/opinion/column/kjbjz5pl80?fbclid=IwAR3yyzYzhSC0xolxNMf0zv_tZQMYhem5uA_AmQQZyk2iSmmhCL-_qNgwiV4">
-                        <a target="_blank"> আরও দেখুন... </a>
+                        <a target="_blank"> বিস্তারিত </a>
                       </Link>
                     </div>
                   </div>
@@ -190,7 +188,7 @@ export default function Story() {
                           className={style.seeMore + " " + style.marginLeftSP}
                         >
                           <Link href="https://www.bd-pratidin.com/chittagong-pratidin/2022/06/09/777422?fbclid=IwAR3dWli2luPC8j7BEJVWFaY2X7_X3pdgua_5ZHB2y5gCrB7I1mx4cPLk-M0">
-                            <a target="_blank"> আরও দেখুন... </a>
+                            <a target="_blank"> বিস্তারিত </a>
                           </Link>
                         </div>
                       </div>
@@ -221,7 +219,7 @@ export default function Story() {
                           className={style.seeMore + " " + style.marginLeftSP}
                         >
                           <Link href="https://www.prothomalo.com/opinion/column/kjbjz5pl80?fbclid=IwAR3yyzYzhSC0xolxNMf0zv_tZQMYhem5uA_AmQQZyk2iSmmhCL-_qNgwiV4">
-                            <a target="_blank"> আরও দেখুন... </a>
+                            <a target="_blank"> বিস্তারিত </a>
                           </Link>
                         </div>
                       </div>
@@ -252,7 +250,7 @@ export default function Story() {
                           className={style.seeMore + " " + style.marginLeftSP}
                         >
                           <Link href="https://www.bd-pratidin.com/chittagong-pratidin/2022/06/09/777422?fbclid=IwAR3dWli2luPC8j7BEJVWFaY2X7_X3pdgua_5ZHB2y5gCrB7I1mx4cPLk-M0">
-                            <a target="_blank"> আরও দেখুন... </a>
+                            <a target="_blank"> বিস্তারিত </a>
                           </Link>
                         </div>
                       </div>
@@ -295,7 +293,7 @@ export default function Story() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        আরও দেখুন
+                        বিস্তারিত
                       </a>
                     </div>
                   </div>
@@ -319,7 +317,7 @@ export default function Story() {
 
                     <div className={style.seeMore}>
                       <Link href="https://www.prothomalo.com/opinion/column/kjbjz5pl80?fbclid=IwAR3yyzYzhSC0xolxNMf0zv_tZQMYhem5uA_AmQQZyk2iSmmhCL-_qNgwiV4">
-                        <a> আরও দেখুন... </a>
+                        <a> বিস্তারিত </a>
                       </Link>
                     </div>
                   </div>
@@ -344,7 +342,7 @@ export default function Story() {
 
                     <div className={style.seeMore}>
                       <Link href="https://www.tbsnews.net/bangla/%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE%E0%A6%A6%E0%A7%87%E0%A6%B6/news-details-111226">
-                        <a target="_blank"> আরও দেখুন... </a>
+                        <a target="_blank"> বিস্তারিত </a>
                       </Link>
                     </div>
                   </div>
@@ -371,7 +369,7 @@ export default function Story() {
 
                     <div className={style.seeMore + " " + style.marginLeftLink}>
                       <Link href="https://www.jugantor.com/todays-paper/bangla-face/599846/%E0%A6%A8%E0%A6%BE%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A6%A8%E0%A6%BF%E0%A6%95-%E0%A6%B0%E0%A7%82%E0%A6%AA%E0%A7%87-%E0%A6%B8%E0%A7%87%E0%A6%9C%E0%A7%87%E0%A6%9B%E0%A7%87-%E0%A6%96%E0%A6%BE%E0%A6%97%E0%A7%9C%E0%A6%BE%E0%A6%9B%E0%A7%9C%E0%A6%BF%E0%A6%B0-%E0%A6%86%E0%A6%B2%E0%A7%81%E0%A6%9F%E0%A6%BF%E0%A6%B2%E0%A6%BE?fbclid=IwAR0Gb3uH6WD5nrnXK4TYf1TozFPuuIwKIWIIXI3mXa-joiSkfgE-WKvTAFM">
-                        <a target="_blank"> আরও দেখুন... </a>
+                        <a target="_blank"> বিস্তারিত </a>
                       </Link>
                     </div>
                   </div>
@@ -405,7 +403,7 @@ export default function Story() {
                           className={style.seeMore + " " + style.marginLeftSP}
                         >
                           <Link href="https://www.prothomalo.com/opinion/column/kjbjz5pl80?fbclid=IwAR3yyzYzhSC0xolxNMf0zv_tZQMYhem5uA_AmQQZyk2iSmmhCL-_qNgwiV4">
-                            <a> আরও দেখুন... </a>
+                            <a> বিস্তারিত </a>
                           </Link>
                         </div>
                       </div>
@@ -436,7 +434,7 @@ export default function Story() {
                           className={style.seeMore + " " + style.marginLeftSP}
                         >
                           <Link href="https://www.tbsnews.net/bangla/%E0%A6%AC%E0%A6%BE%E0%A6%82%E0%A6%B2%E0%A6%BE%E0%A6%A6%E0%A7%87%E0%A6%B6/news-details-111226">
-                            <a target="_blank"> আরও দেখুন... </a>
+                            <a target="_blank">বিস্তারিত </a>
                           </Link>
                         </div>
                       </div>
@@ -467,7 +465,7 @@ export default function Story() {
                           className={style.seeMore + " " + style.marginLeftSP}
                         >
                           <Link href="https://www.jugantor.com/todays-paper/bangla-face/599846/%E0%A6%A8%E0%A6%BE%E0%A6%A8%E0%A7%8D%E0%A6%A6%E0%A6%A8%E0%A6%BF%E0%A6%95-%E0%A6%B0%E0%A7%82%E0%A6%AA%E0%A7%87-%E0%A6%B8%E0%A7%87%E0%A6%9C%E0%A7%87%E0%A6%9B%E0%A7%87-%E0%A6%96%E0%A6%BE%E0%A6%97%E0%A7%9C%E0%A6%BE%E0%A6%9B%E0%A7%9C%E0%A6%BF%E0%A6%B0-%E0%A6%86%E0%A6%B2%E0%A7%81%E0%A6%9F%E0%A6%BF%E0%A6%B2%E0%A6%BE?fbclid=IwAR0Gb3uH6WD5nrnXK4TYf1TozFPuuIwKIWIIXI3mXa-joiSkfgE-WKvTAFM">
-                            <a target="_blank"> আরও দেখুন... </a>
+                            <a target="_blank"> বিস্তারিত </a>
                           </Link>
                         </div>
                       </div>

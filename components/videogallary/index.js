@@ -97,7 +97,7 @@ export default function VideoGallary() {
 
               <div className={style.seeMoreVideo}>
                 <Link href="">
-                  <a target="_blank"> আরও দেখুন </a>
+                  <a target="_blank"> বিস্তারিত </a>
                 </Link>
               </div>
             </div>

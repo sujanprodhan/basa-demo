@@ -270,7 +270,6 @@
           margin: 0px 0 0 60px;
 
           a {
-            width: 100px;
             background: #aad9c5;
             text-align: center;
             border-radius: 25px;
@@ -278,8 +277,7 @@
             color: rgba($colorPrimary, 1);
             transition: all 0.5s ease-in-out;
             text-decoration: none;
-            padding: 7px 10px;
-
+            padding: 5px 20px;
             &:hover {
               background: rgba($colorPrimary, 1);
               color: rgba(white, 0.7);

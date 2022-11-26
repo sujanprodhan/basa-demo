@@ -217,10 +217,10 @@
     z-index: 8;
     opacity: 1;
     background-image: url("/images/logo-sp.png");
+    background-color: white;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: left center;
-    background-color: transparent;
   }
 }
 
@@ -389,7 +389,15 @@
   top: 0px;
   text-align: center;
   display: block;
+  animation-name: ulListAm;
+  animation-delay: 0.6s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
 
+  img{
+    border-radius: 10px;
+  }
   @include devices(tablet) {
     display: none;
   }
@@ -759,6 +767,10 @@
       color: #cdcdcd;
       text-align: center;
       font-size: 3.5vw;
+      animation-name: ulListAm;
+      animation-duration: $animationDuration;
+      animation-fill-mode: forwards;
+      opacity: 0;
     }
 
     .headerTitleTextSP {
@@ -786,10 +798,8 @@
 }
 
 .mobileMenu {
+
   @include devices(pc) {
-    display: none;
-  }
-  @include devices(tablet) {
     display: block;
     width: calc(100%);
     height: 100vh;
@@ -853,11 +863,11 @@
   }
 }
 .mobileClose {
-  @include devices(tablet) {
+  // @include devices(tablet) {
     animation-name: spBgClose;
     animation-duration: $animationDuration;
     animation-fill-mode: forwards;
-  }
+  // }
   .spMenuList,
   .close {
     display: none;
@@ -890,7 +900,7 @@
 }
 
 .onlyMobile {
-  display: none;
+  // display: none;
   @include devices(tablet) {
     display: block;
   }

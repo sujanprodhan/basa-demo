@@ -152,9 +152,10 @@
   font-size: 20px;
   margin: 20px 0 40px;
   color: #0c2725;
+  text-align: center !important;
   @include devices(pc) {
-    left: 100px;
-    width: calc(100% - 200px);
+    width: calc(100%);
+    text-align: center;
   }
   @include devices(sp) {
     left: 10%;
