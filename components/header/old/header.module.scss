@@ -395,7 +395,7 @@
   animation-fill-mode: forwards;
   opacity: 0;
 
-  img {
+  img{
     border-radius: 10px;
   }
   @include devices(tablet) {
@@ -798,6 +798,7 @@
 }
 
 .mobileMenu {
+
   @include devices(pc) {
     display: block;
     width: calc(100%);
@@ -863,9 +864,9 @@
 }
 .mobileClose {
   // @include devices(tablet) {
-  animation-name: spBgClose;
-  animation-duration: $animationDuration;
-  animation-fill-mode: forwards;
+    animation-name: spBgClose;
+    animation-duration: $animationDuration;
+    animation-fill-mode: forwards;
   // }
   .spMenuList,
   .close {

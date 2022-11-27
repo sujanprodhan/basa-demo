@@ -38,7 +38,7 @@ export default function Footer() {
                   <Image
                     src="/images/footer/footer-logo.png"
                     height={200}
-                    width={350}
+                    width={600}
                   />
                 </div>
 

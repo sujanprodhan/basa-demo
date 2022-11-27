@@ -29,56 +29,67 @@
   display: block;
   background-position: center;
   background-repeat: no-repeat;
+  // border: 1px solid red;
   @include devices(pc) {
-    height: 550px;
+    height: 350px;
     background-image: url("/images/footer/1920.png");
     background-size: 100%;
   }
   @include devices(medium) {
-    height: 483px;
-    background-image: url("/images/footer/1440.png");
-    background-size: 100%;
+    height: 350px;
+    background-image: url("/images/footer/1920.png");
+    background-size: 100% 350px;
   }
 
   @include devices(spc) {
-    height: 392px;
+    height: 350px;
     background-image: url("/images/footer/1366.png");
     background-size: 100%;
   }
 
   @include devices(tablet) {
-    height: 500px;
+    height: 320px;
     background-image: url("/images/footer/1366.png");
-    background-size: 100% 500px;
+    background-size: 100% 300px;
   }
 
   @include devices(sp) {
+    background-image: url("/images/footer/550.png");
     background-size: cover;
-    height: 360px;
+    height: 300px;
   }
 
   @include devices(ssp) {
-    height: 350px;
+    height: 300px;
     background-image: url("/images/footer/550.png");
     background-size: 100% 420px;
   }
   .footerLogo {
-    width: 340px;
-    height: 200px;
     opacity: 1;
     z-index: 422;
     margin: auto;
-    padding-top: 120px;
+    padding-top: 50px;
+    @include devices(pc) {
+      width: 500px;
+    }
+
     @include devices(medium) {
-      padding-top: 60px;
+      padding-top: 80px;
+      width: 400px;
     }
     @include devices(spc) {
       padding-top: 50px;
     }
     @include devices(sp) {
-      width: 260px;
+      width: 290px;
       img {
-        height: 160px !important;
+        height: 120px !important;
+      }
+    }
+    @include devices(ssp) {
+      width: 250px;
+      img {
+        height: 100px !important;
       }
     }
   }
@@ -87,15 +98,18 @@
     font-family: $fontFamily;
     opacity: 0;
     position: relative;
-    margin-top: 40px;
+    margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 35px;
+    font-size: 30px;
     color: #01796f;
     font-weight: bold;
+    @include devices(medium) {
+      margin-top: 30px;
+    }
     i {
-      font-size: 36px;
+      font-size: 30px;
       margin-right: 10px;
       color: #01796f;
       @include devices(sp) {
@@ -104,7 +118,12 @@
     }
     @include devices(sp) {
       font-size: 20px;
-      margin-top: -20px;
+      margin-top: 10px;
+    }
+
+    @include devices(ssp) {
+      font-size: 20px;
+      margin-top: 20px;
     }
   }
   .link {
@@ -123,8 +142,20 @@
       left: 75%;
       bottom: 30px;
     }
+    @include devices(spc) {
+      bottom: 20px !important;
+    }
+    @include devices(tablet) {
+      position: absolute;
+      left: 65%;
+      bottom: 0px;
+    }
     @include devices(medium) {
       bottom: 10px;
+      img {
+        height: 40px !important;
+        width: 40px !important;
+      }
     }
 
     @include devices(sp) {
@@ -143,14 +174,13 @@
 
 .copyright {
   font-family: $fontFamily;
-  height: 80px;
   opacity: 0;
   position: relative;
   background: white;
   padding: 10px 0;
   color: $colorPrimary;
   font-size: 20px;
-  margin: 20px 0 40px;
+  margin: 10px 0 20px;
   color: #0c2725;
   text-align: center !important;
   @include devices(pc) {

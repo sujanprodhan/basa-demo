@@ -229,15 +229,12 @@ export default function Home() {
       <div className={style.mainAnimation}>
         <div className={style.header}>
           <div className={style.headerMenu}> </div>
+
           <div className={style.headerMenuLeft}></div>
+
           <div className={style.headerTitle}>
             <div className={style.headerTitleTextTop}>
-              <Image
-                src="/images/basa-logo-sp-old.jpg"
-                alt="logo"
-                height={50}
-                width={50}
-              />
+              <Image src="/images/basa-logo-sp-old.jpg" alt="logo" height={50} width={50} />
             </div>
             <div className={style.headerTitleText}>
               বাংলাদেশ অ্যাডমিনিস্ট্রেটিভ সার্ভিস এসোসিয়েশন
@@ -246,12 +243,7 @@ export default function Home() {
 
           <div className={style.headerTitleSP}>
             <div className={style.headerTitleTextTopSP}>
-              <Image
-                src="/images/basa-logo-sp-old.jpg"
-                alt="logo"
-                height={50}
-                width={50}
-              />
+              - ১৯ শে এপ্রিল ১৯৮১ সাল থেকে...
             </div>
             <div className={style.headerTitleTextSP}>
               বাংলাদেশ অ্যাডমিনিস্ট্রেটিভ সার্ভিস এসোসিয়েশন
@@ -278,14 +270,15 @@ export default function Home() {
             </ul>
           </div>
 
-          {/* {startAnimation && (
+          {startAnimation && (
             <div className={style.sliderArea}>
-              //  Old slider design  
               <Swiper
                 ref={sliderRef}
+                // initialSlide={currentIndex}
                 spaceBetween={50}
                 slidesPerView={1}
                 loop={true}
+                // onSwiper={(swiper) => console.log("", swiper)}
                 navigation={{
                   nextEl: ".nextSlider",
                   prevEl: ".prevSlider",
@@ -316,12 +309,6 @@ export default function Home() {
                 </SwiperSlide>
               </Swiper>
             </div>
-          )} */}
-
-          {startAnimation && (
-            <div className={style.sliderArea}>
-              <Lottie loop={false} animationData={sliderAnimation1} />
-            </div>
           )}
 
           <div className={style.bottomArea}>
@@ -332,13 +319,13 @@ export default function Home() {
             </div>
 
             <div className={style.bottomRightMenu}>
-              {/* <div className={style.bottomSlider}>
+              <div className={style.bottomSlider}>
                 <div
                   className={
                     currentIndex === 0
                       ? style.bottomSliderItem +
-                        " nextSlider " +
-                        style.sliderActive
+                      " nextSlider " +
+                      style.sliderActive
                       : style.bottomSliderItem + " nextSlider "
                   }
                   onClick={() => setCurrentIndex(0)}
@@ -351,8 +338,8 @@ export default function Home() {
                   className={
                     currentIndex === 1
                       ? style.bottomSliderItem +
-                        " nextSlider " +
-                        style.sliderActive
+                      " nextSlider " +
+                      style.sliderActive
                       : style.bottomSliderItem + " nextSlider "
                   }
                   onClick={() => setCurrentIndex(1)}
@@ -365,8 +352,8 @@ export default function Home() {
                   className={
                     currentIndex === 2
                       ? style.bottomSliderItem +
-                        " nextSlider " +
-                        style.sliderActive
+                      " nextSlider " +
+                      style.sliderActive
                       : style.bottomSliderItem + " nextSlider "
                   }
                   onClick={() => setCurrentIndex(2)}
@@ -375,7 +362,7 @@ export default function Home() {
                   <br />
                   <span>ব্যানার-৩</span>
                 </div>
-              </div> */}
+              </div>
             </div>
             <div className={style.bottomRound}></div>
           </div>
