@@ -116,18 +116,6 @@ export default function Home() {
                     <a> দক্ষতা উন্নয়ন </a>
                   </Link>
                 </li>
-                <li>
-                  <i className="fa-sharp fa-solid fa-square-check"></i>
-                  <Link href="#">
-                    <a> জ্ঞানকোষ </a>
-                  </Link>
-                </li>
-                <li>
-                  <i className="fa-sharp fa-solid fa-square-check"></i>
-                  <Link href="#">
-                    <a> ই-লাইব্রেরি</a>
-                  </Link>
-                </li>
 
                 <li>
                   <i className="fa-sharp fa-solid fa-square-check"></i>
@@ -179,19 +167,6 @@ export default function Home() {
                 <li>
                   <i className="fa-sharp fa-solid fa-square-check"></i>
                   <Link href="#">
-                    <a> জ্ঞানকোষ </a>
-                  </Link>
-                </li>
-                <li>
-                  <i className="fa-sharp fa-solid fa-square-check"></i>
-                  <Link href="#">
-                    <a> ই-লাইব্রেরি</a>
-                  </Link>
-                </li>
-
-                <li>
-                  <i className="fa-sharp fa-solid fa-square-check"></i>
-                  <Link href="#">
                     <a> যোগাযোগ </a>
                   </Link>
                 </li>
@@ -231,16 +206,21 @@ export default function Home() {
           <div className={style.headerMenu}> </div>
           <div className={style.headerMenuLeft}></div>
           <div className={style.headerTitle}>
-            <div className={style.headerTitleTextTop}>
+            {/* <div className={style.headerTitleTextTop}>
               <Image
                 src="/images/basa-logo-sp-old.jpg"
                 alt="logo"
                 height={50}
                 width={50}
               />
-            </div>
+            </div> */}
             <div className={style.headerTitleText}>
               বাংলাদেশ অ্যাডমিনিস্ট্রেটিভ সার্ভিস এসোসিয়েশন
+            </div>
+            <div className={style.headerSubTitleText}>
+              বাংলাদেশ অ্যাডমিনিস্ট্রেটিভ সার্ভিস এসোসিয়েশন বাংলাদেশ
+              অ্যাডমিনিস্ট্রেটিভ সার্ভিস এসোসিয়েশন বাংলাদেশ অ্যাডমিনিস্ট্রেটিভ
+              সার্ভিস এসোসিয়েশন বাংলাদেশ অ্যাডমিনিস্ট্রেটিভ সার্ভিস এসোসিয়েশন
             </div>
           </div>
 

@@ -90,74 +90,87 @@
     }
 
     .presidentName {
-      position: absolute;
-
+      position: relative;
       color: $colorPrimary;
       font-weight: 600;
       opacity: 0;
-
+      font-size: 28px;
       @include devices(pc) {
-        top: 170px;
-        left: 27%;
-        font-size: 42px;
+        // top: 170px;
+        // left: 27%;
+        text-align: center;
+        padding-top: 90px;
       }
 
       @include devices(spc) {
-        top: 140px;
-        left: 27%;
-        font-size: 30px;
+        // top: 140px;
+        // left: 27%;
+        // font-size: 30px;
       }
 
       @include devices(tablet) {
-        top: 21%;
-        left: 10%;
-        font-size: 25px;
+        // top: 21%;
+        // left: 10%;
+        // font-size: 25px;
       }
 
       @include devices(sp) {
-        top: 13%;
-        left: 10%;
-        right: 30px;
+        padding-top: 80px;
+        left: 7%;
         max-width: 90%;
         font-size: 20px;
       }
     }
 
     .designation {
-      position: absolute;
+      position: relative;
       font-weight: bold;
       opacity: 0;
-      width: 45%;
+      width: 100%;
+      color: $colorPrimary;
+      padding-top: 10px;
+      text-align: center;
+      margin: 0 auto;
+      font-size: 18px;
       @include devices(pc) {
-        top: 240px;
-        left: 27%;
-        font-size: 22px;
-        color: $colorPrimary;
+        // top: 240px;
+        // left: 27%;
+        // left: 32%;
+        // transform: translate(-30%);
       }
 
       @include devices(spc) {
-        top: 185px;
-        left: 27%;
-        font-size: 18px;
+        // top: 185px;
+        // left: 27%;
+        // font-size: 18px;
       }
 
       @include devices(tablet) {
-        top: 28%;
-        left: 10%;
+        // top: 28%;
+        // left: 10%;
+        font-size: 16px;
       }
 
       @include devices(sp) {
-        width: 90%;
-        top: 20%;
-        left: 10%;
-        right: 30px;
-        max-width: 95%;
+        // width: 90%;
+        // top: 20%;
+        // left: 10%;
+        // right: 30px;
         font-size: 16px;
+      }
+
+      .designationWidth {
+        width: 35%;
+        text-align: center;
+        margin: 0 auto;
+        @include devices(tablet) {
+          width: 60%;
+        }
       }
     }
 
     .details {
-      position: absolute;
+      position: relative;
       color: $colorSecondary;
 
       text-align: justify;
@@ -167,23 +180,28 @@
       -webkit-line-clamp: 10;
       -webkit-box-orient: vertical;
       overflow: hidden;
+      width: 70%;
+      margin: auto;
+      text-align: center;
+      padding-right: 50px;
+      line-height: 1.5;
+      font-size: 18px;
+      padding-top: 20px;
       @include devices(pc) {
-        top: 300px;
-        left: 27%;
-        font-size: 16px;
-        width: 45%;
+        //  font-size: 1.1vw;
       }
 
       @include devices(spc) {
-        top: 220px;
-        left: 27%;
-        font-size: 16px;
-        width: 45%;
+        //  font-size: 1.1vw;
+      }
+      @include devices(xsmpc) {
+        //  font-size: 16px;
       }
 
       @include devices(tablet) {
-        top: 38%;
-        left: 10%;
+        // top: 38%;
+        // left: 10%;
+        padding-right: 100px;
       }
 
       // @include devices(sp) {
@@ -194,13 +212,14 @@
       // }
 
       @include devices(sp) {
-        top: 28%;
+        left: 7%;
         overflow: hidden;
-        width: 82%;
         display: -webkit-box;
         -webkit-line-clamp: 14;
         -webkit-box-orient: vertical;
         font-size: 16px;
+        margin: auto;
+        text-align: center;
       }
 
       @include devices(ssp) {
@@ -254,12 +273,14 @@
   opacity: 0;
   position: absolute;
   top: 200px;
-  left: calc(66% + 200px);
-
+  // left: calc(66% + 200px);
+  // left: calc(66% + 200px);
+  right: 70px;
   @include devices(tablet) {
-    bottom: 5%;
-    top: 29%;
-    left: 72%;
+    // bottom: 5%;
+    // top: 29%;
+    // left: 72%;
+    right: 30px;
   }
 
   @include devices(sp) {

@@ -64,43 +64,43 @@ const photos = [
       },
     ],
   },
-  {
-    data: [
-      {
-        thumb: "/images/galary/galary6-min.JPG",
-        url: "/images/galary/galary6-min.JPG",
-        type: "photo",
-        id: 7,
-        text: "বাংলাদেশ অ্যাডমিনিস্ট্রেটিভ সার্ভিস এসোসিয়েশন  ফটো গ্যালারী",
-      },
-      {
-        thumb: "/images/galary/galary7-min.JPG",
-        url: "/images/galary/galary7-min.JPG",
-        type: "photo",
-        id: 8,
-        text: "বাংলাদেশ অ্যাডমিনিস্ট্রেটিভ সার্ভিস এসোসিয়েশন  ফটো গ্যালারী",
-      },
-    ],
-  },
+  // {
+  //   data: [
+  //     {
+  //       thumb: "/images/galary/galary6-min.JPG",
+  //       url: "/images/galary/galary6-min.JPG",
+  //       type: "photo",
+  //       id: 7,
+  //       text: "বাংলাদেশ অ্যাডমিনিস্ট্রেটিভ সার্ভিস এসোসিয়েশন  ফটো গ্যালারী",
+  //     },
+  //     {
+  //       thumb: "/images/galary/galary7-min.JPG",
+  //       url: "/images/galary/galary7-min.JPG",
+  //       type: "photo",
+  //       id: 8,
+  //       text: "বাংলাদেশ অ্যাডমিনিস্ট্রেটিভ সার্ভিস এসোসিয়েশন  ফটো গ্যালারী",
+  //     },
+  //   ],
+  // },
 
-  {
-    data: [
-      {
-        thumb: "/images/galary/galary8-min.JPG",
-        url: "/images/galary/galary8-min.JPG",
-        type: "photo",
-        id: 10,
-        text: "বাংলাদেশ অ্যাডমিনিস্ট্রেটিভ সার্ভিস এসোসিয়েশন  ফটো গ্যালারী",
-      },
-      {
-        thumb: "/images/galary/galary9-min.JPG",
-        url: "/images/galary/galary9-min.JPG",
-        type: "photo",
-        id: 11,
-        text: "বাংলাদেশ অ্যাডমিনিস্ট্রেটিভ সার্ভিস এসোসিয়েশন  ফটো গ্যালারী",
-      },
-    ],
-  },
+  // {
+  //   data: [
+  //     {
+  //       thumb: "/images/galary/galary8-min.JPG",
+  //       url: "/images/galary/galary8-min.JPG",
+  //       type: "photo",
+  //       id: 10,
+  //       text: "বাংলাদেশ অ্যাডমিনিস্ট্রেটিভ সার্ভিস এসোসিয়েশন  ফটো গ্যালারী",
+  //     },
+  //     {
+  //       thumb: "/images/galary/galary9-min.JPG",
+  //       url: "/images/galary/galary9-min.JPG",
+  //       type: "photo",
+  //       id: 11,
+  //       text: "বাংলাদেশ অ্যাডমিনিস্ট্রেটিভ সার্ভিস এসোসিয়েশন  ফটো গ্যালারী",
+  //     },
+  //   ],
+  // },
 ];
 
 const imagesList = [
@@ -149,11 +149,11 @@ const imagesList = [
     type: "photo",
     id: 9,
   },
-  // {
-  //   url: "/images/galary/galary9-min.JPG",
-  //   type: "photo",
-  //   id: 10,
-  // },
+  {
+    url: "/images/galary/galary9-min.JPG",
+    type: "photo",
+    id: 10,
+  },
 ];
 export default function VideoGallary() {
   const [photoList, setPhotoList] = useState(photos);
@@ -168,19 +168,72 @@ export default function VideoGallary() {
 
   const popupSetting = (index, position) => {
     setPopup(true);
-    // let current = 0;
-    // if (position === 0) {
-    //   current = index * 2;
-    // } else {
-    //   current = index * 2 + 1;
-    // }
-    // console.log(" current ", current);
-    setCurrentIndex(index);
+    let current = 0;
+    if (position === 0) {
+      current = index * 2;
+    } else {
+      current = index * 2 + 1;
+    }
+    console.log(" current ", current);
+    setCurrentIndex(current);
   };
   const closePopup = () => {
     setPopup(false);
     setCurrentIndex(0);
   };
+
+  useEffect(() => {
+    if (inView) {
+      const onScroll = () => {
+        // setOffset(window.pageYOffset);
+        const div = document.getElementById("photoDiv");
+        const currentPos = window.pageYOffset;
+        const galaryList = document.querySelectorAll("#galaryList");
+        const childDiv = galaryList[0].children;
+        if (currentPos < 3900) {
+          for (let i = 0; i < childDiv.length; i++) {
+            if (i % 2 == 0) {
+              childDiv[i].style.marginBottom = "-200px";
+              childDiv[i].style.transition = "all 1s ease-in-out";
+              childDiv[i].style.margintop = "unset";
+            } else {
+              childDiv[i].style.marginTop = "-100px";
+              childDiv[i].style.transition = "all 1s ease-in-out";
+              childDiv[i].style.marginBottom = "unset";
+            }
+          }
+        } else if (currentPos > 3900 && currentPos < 4500) {
+          for (let i = 0; i < childDiv.length; i++) {
+            if (i % 2 == 0) {
+              childDiv[i].style.marginBottom = "10px";
+              childDiv[i].style.transition = "all 1s ease-in-out";
+              childDiv[i].style.margintop = "unset";
+            } else {
+              childDiv[i].style.marginTop = "0";
+              childDiv[i].style.transition = "all 1s ease-in-out";
+              childDiv[i].style.marginBottom = "unset";
+            }
+          }
+        } else {
+          for (let i = 0; i < childDiv.length; i++) {
+            if (i % 2 == 0) {
+              childDiv[i].style.margintop = "-120px";
+              childDiv[i].style.transition = "all 1s ease-in-out";
+              // childDiv[i].style.margintop = "200px";
+            } else {
+              childDiv[i].style.marginBottom = "-130px";
+              childDiv[i].style.transition = "all 1s ease-in-out";
+            }
+          }
+        }
+      };
+
+      // clean up code
+      window.removeEventListener("scroll", onScroll);
+      window.addEventListener("scroll", onScroll, { passive: true });
+      return () => window.removeEventListener("scroll", onScroll);
+    }
+  }, [inView]);
 
   return (
     <div className={style.galarySection} ref={ref} id="photoDiv">
@@ -207,25 +260,47 @@ export default function VideoGallary() {
       </InView>
 
       <div className={style.galary} id="galaryList">
-        {imagesList &&
-          imagesList.map((item, index) => (
-            <div key={item.id} className={style.galaryItem}>
+        {photoList &&
+          photoList.map((item, index) => (
+            <div
+              key={item.data && item.data[0].id}
+              className={style.galaryItem}
+            >
               <div
                 className={style.image1}
                 onClick={() => popupSetting(index, 0)}
               >
                 <Image
-                  src={item.url}
+                  src={item.data && item.data[0].thumb}
                   alt="galary"
                   layout="responsive"
                   objectFit="cover"
                   objectPosition="top left"
-                  width="400px"
+                  width="300px"
                   height="300px"
                   className={style.photoAlbum}
                 />
                 <div className={style.hoverBg1}>গ্যালারী</div>
                 <div className={style.hover1}>
+                  {item.data && item.data[1].text}
+                </div>
+              </div>
+              <div
+                className={style.image2}
+                onClick={() => popupSetting(index, 1)}
+              >
+                <Image
+                  src={item.data && item.data[1].thumb}
+                  alt="galary"
+                  layout="responsive"
+                  objectFit="cover"
+                  objectPosition="top left"
+                  width="300px"
+                  height="300px"
+                  className={style.photoAlbum}
+                />
+                <div className={style.hoverBg2}>গ্যালারী</div>
+                <div className={style.hover2}>
                   {item.data && item.data[1].text}
                 </div>
               </div>

@@ -415,18 +415,9 @@
   top: 0px;
   font-size: 26px;
   display: block;
-
-  @include devices(pc) {
-    animation-name: headerTitleText;
-  }
-
+  animation-name: headerTitleText;
   @include devices(spc) {
-    animation-name: headerTitleText;
     font-size: 20px;
-  }
-
-  @include devices(tablet) {
-    display: none;
   }
 }
 
@@ -441,6 +432,36 @@
     opacity: 1;
     width: 100%;
     font-size: 1.5vw;
+  }
+}
+
+.headerSubTitleText {
+  opacity: 0;
+  position: relative;
+  animation-duration: $animationDuration;
+  animation-delay: $animationDelay;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  text-align: center;
+  top: 30px;
+  font-size: 16px;
+  display: block;
+  animation-name: headerSubTitleTextAm;
+  color: #609788;
+  line-height: 1.5;
+}
+
+@keyframes headerSubTitleTextAm {
+  0% {
+    opacity: 0;
+    width: 0;
+    font-size: 2px;
+  }
+
+  100% {
+    opacity: 1;
+    width: 100%;
+    font-size: 0.9vw;
   }
 }
 
@@ -797,18 +818,42 @@
   }
 }
 
+@keyframes smMenuBgAmPC {
+  0% {
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  100% {
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
 .mobileMenu {
+  display: block;
+  width: calc(100%);
+  height: 100vh;
+  background: #032019;
+  z-index: 10;
+  position: fixed;
+  margin: auto;
+  animation-duration: $animationDuration;
+  animation-fill-mode: forwards;
   @include devices(pc) {
-    display: block;
-    width: calc(100%);
-    height: 100vh;
-    background: #032019;
-    z-index: 10;
-    position: fixed;
-    margin: auto;
+    animation-name: smMenuBgAmPC;
+    border-radius: 20px;
+  }
+
+  @include devices(sp) {
     animation-name: smMenuBgAm;
-    animation-duration: $animationDuration;
-    animation-fill-mode: forwards;
   }
   .close {
     width: 40px;
@@ -862,14 +907,35 @@
   }
 }
 .mobileClose {
-  // @include devices(tablet) {
-  animation-name: spBgClose;
   animation-duration: $animationDuration;
   animation-fill-mode: forwards;
-  // }
+  @include devices(pc) {
+    animation-name: spBgClosePC;
+  }
+  @include devices(sp) {
+    animation-name: spBgClose;
+  }
+
   .spMenuList,
   .close {
     display: none;
+  }
+}
+@keyframes spBgClosePC {
+  0% {
+    width: 500px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  100% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
   }
 }
 

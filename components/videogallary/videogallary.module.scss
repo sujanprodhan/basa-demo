@@ -49,10 +49,11 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    row-gap: 40px;
-    column-gap: 40px;
-    width: 75%;
+    row-gap: 5px;
+    column-gap: 5px;
+    width: 97vw;
     opacity: 0;
+    padding-top: 30px;
 
     @include devices(tablet) {
       width: 100%;
@@ -66,11 +67,11 @@
 
     .gallaryItem {
       position: relative;
-      width: calc(100% / 3 - 50px);
-      height: 320px;
+      width: 33%;
+      height: 420px;
       cursor: pointer;
       transition: all 0.4s ease-in-out;
-      border-radius: 10px;
+      // border-radius: 10px;
 
       @include devices(sp) {
         width: 90%;
@@ -88,15 +89,11 @@
 
       .imageView {
         img {
-          border-radius: 20px;
-        }
-      }
-
-      &:hover {
-        transform: scale(1.1);
-
-        img {
-          opacity: 0.6;
+          transition: all 0.6s ease-in-out;
+          &:hover {
+            opacity: 0.6;
+            transform: scale(1.1);
+          }
         }
       }
     }

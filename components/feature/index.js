@@ -68,7 +68,7 @@ export default function Feature() {
                     }
                     //  onClick={() => setIndexNew(0)}
                   >
-                    <i className="fa-solid fa-book"></i>
+                    <i className="fa fa-users"></i>
                     <p>
                       {" "}
                       জনকল্যাণে <br /> এ্যাসোসিয়েশন{" "}
@@ -107,7 +107,7 @@ export default function Feature() {
                     className={style.leftContent}
                     //  onClick={() => setIndexNew(2)}
                   >
-                    <i className="fa-solid fa-book"></i>
+                    <i class="fa-solid fa-users-viewfinder"></i>
                     <p> সদস্য তালিকা </p>
                   </div>
                 </a>
@@ -125,7 +125,7 @@ export default function Feature() {
                     className={style.bottomRightContent}
                     //  onClick={() => setIndexNew(3)}
                   >
-                    <i className="fa-solid fa-book"></i>
+                    <i class="fa-solid fa-users-gear"></i>
                     <p> কার্যনির্বাহী কমিটি </p>
                   </div>
                 </a>

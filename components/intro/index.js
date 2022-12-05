@@ -73,7 +73,9 @@ export default function Intro() {
                     : style.designation + " " + style.startAnimation4
                 }
               >
-                {list[index].designation}
+                <div className={style.designationWidth}>
+                  {list[index].designation}
+                </div>
               </div>
 
               <div
