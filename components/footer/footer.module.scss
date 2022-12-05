@@ -56,11 +56,11 @@
   @include devices(sp) {
     background-image: url("/images/footer/550.png");
     background-size: cover;
-    height: 300px;
+    height: 360px;
   }
 
   @include devices(ssp) {
-    height: 300px;
+    height: 360px;
     background-image: url("/images/footer/550.png");
     background-size: 100% 420px;
   }
@@ -102,11 +102,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     font-size: 30px;
     color: #01796f;
     font-weight: bold;
     @include devices(medium) {
-      margin-top: 30px;
+      margin-top: 20px;
     }
     i {
       font-size: 30px;
@@ -116,14 +117,22 @@
         font-size: 24px;
       }
     }
+    @include devices(tablet) {
+      font-size: 20px;
+      margin-top: 0px;
+    }
     @include devices(sp) {
       font-size: 20px;
       margin-top: 10px;
+      width: 200px;
+      margin: 0 auto;
     }
 
     @include devices(ssp) {
       font-size: 20px;
       margin-top: 20px;
+      width: 200px;
+      margin: 0 auto;
     }
   }
   .link {

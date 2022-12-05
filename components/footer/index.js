@@ -50,7 +50,7 @@ export default function Footer() {
                   }
                 >
                   <i className="fa-sharp fa-solid fa-square-phone"></i>
-                  ০১৭১১-১১ ২২ ৩৩
+                  <p> ০১৭১১-১১২২৩৩, ০১৭১১-১১২২৩৩, ০১৭১১-১১২২৩৩</p>
                 </div>
 
                 <div
