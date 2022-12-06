@@ -300,7 +300,17 @@ export default function Home() {
 
           {startAnimation && (
             <div className={style.sliderArea}>
-              <Lottie loop={true} animationData={sliderAnimation1} />
+              <div className={style.animationArea}>
+                <div className={style.firstBox} onClick={() => mobileMenu()}>
+                  {" "}
+                  Menu
+                </div>
+                <div className={style.secondLine}> </div>
+                <div className={style.thirdBox}> </div>
+                <div className={style.fourthdBox}> </div>
+                <div className={style.fifthBox}> </div>
+                <div className={style.sixthBox}> </div>
+              </div>
             </div>
           )}
 
