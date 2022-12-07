@@ -310,6 +310,23 @@ export default function Home() {
                 <div className={style.fourthdBox}> </div>
                 <div className={style.fifthBox}> </div>
                 <div className={style.sixthBox}> </div>
+                <div className={style.seventhBox}>
+                  <i className="fa-solid fa-users"></i>
+                </div>
+                <a href="#">
+                  <div className={style.eighthBoxMenu}>
+                    <i className="fa-solid fa-setting"></i>
+                  </div>
+                </a>
+                <div className={style.ninethBox}>
+                  <i className="fa-solid fa-user"></i>
+                </div>
+
+                <a href="#">
+                  <div className={style.tenthBoxMenu}>
+                    <i className="fa-solid fa-setting"></i>
+                  </div>
+                </a>
               </div>
             </div>
           )}
