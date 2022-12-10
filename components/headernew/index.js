@@ -302,8 +302,8 @@ export default function Home() {
             <div className={style.sliderArea}>
               <div className={style.animationArea}>
                 <div className={style.firstBox} onClick={() => mobileMenu()}>
-                  {" "}
-                  Menu
+                  সদস্য <br />
+                  প্রোফাইল
                 </div>
                 <div className={style.secondLine}> </div>
                 <div className={style.thirdBox}> </div>
@@ -313,18 +313,20 @@ export default function Home() {
                 <div className={style.seventhBox}>
                   <i className="fa-solid fa-users"></i>
                 </div>
-                <a href="#">
+                <a href="#" target="_blank">
                   <div className={style.eighthBoxMenu}>
                     <i className="fa-solid fa-setting"></i>
+                    <p>চাঁদা</p>
                   </div>
                 </a>
                 <div className={style.ninethBox}>
-                  <i className="fa-solid fa-user"></i>
+                  <i class="fa-solid fa-users-viewfinder"></i>
                 </div>
 
-                <a href="#">
+                <a href="#" target="_blank">
                   <div className={style.tenthBoxMenu}>
-                    <i className="fa-solid fa-setting"></i>
+                    {/* <i class="fa-solid fa-users-gear"></i> */}
+                    <p>জনসেবায় এসোসিয়েশন </p>
                   </div>
                 </a>
               </div>
@@ -338,52 +340,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className={style.bottomRightMenu}>
-              {/* <div className={style.bottomSlider}>
-                <div
-                  className={
-                    currentIndex === 0
-                      ? style.bottomSliderItem +
-                        " nextSlider " +
-                        style.sliderActive
-                      : style.bottomSliderItem + " nextSlider "
-                  }
-                  onClick={() => setCurrentIndex(0)}
-                >
-                  <span>০১</span>
-                  <br />
-                  <span>ব্যানার-১</span>
-                </div>
-                <div
-                  className={
-                    currentIndex === 1
-                      ? style.bottomSliderItem +
-                        " nextSlider " +
-                        style.sliderActive
-                      : style.bottomSliderItem + " nextSlider "
-                  }
-                  onClick={() => setCurrentIndex(1)}
-                >
-                  <span>০২</span>
-                  <br />
-                  <span>ব্যানার-২</span>
-                </div>
-                <div
-                  className={
-                    currentIndex === 2
-                      ? style.bottomSliderItem +
-                        " nextSlider " +
-                        style.sliderActive
-                      : style.bottomSliderItem + " nextSlider "
-                  }
-                  onClick={() => setCurrentIndex(2)}
-                >
-                  <span>০৩</span>
-                  <br />
-                  <span>ব্যানার-৩</span>
-                </div>
-              </div> */}
-            </div>
+            <div className={style.bottomRightMenu}></div>
             <div className={style.bottomRound}></div>
           </div>
         </div>

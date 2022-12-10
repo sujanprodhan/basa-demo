@@ -647,7 +647,7 @@
 .sliderArea {
   $firstBox: 160px;
 
-  border: 1px solid red;
+  // border: 1px solid red;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -682,7 +682,7 @@
   }
 
   .animationArea {
-    border: 1px solid white;
+    // border: 1px solid white;
     position: absolute;
     left: 50%;
     width: 100%;
@@ -718,16 +718,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
     color: $colorPrimary;
     cursor: pointer;
     position: absolute;
-
     animation-name: firstBoxAm;
     animation-duration: 1s;
     animation-fill-mode: forwards;
     &:hover {
-      background: rgba($animationBg, 0.7);
+      //   background: rgba($animationBg, 0.7);
     }
   }
 
@@ -859,15 +860,15 @@
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-delay: 5s;
-    top: calc(50% + 61px);
-    left: calc($firstBox + $secondLineWidth + $thirdBoxWidth + 76px);
+    top: calc(50% + 59px);
+    left: calc($firstBox + $secondLineWidth + $thirdBoxWidth + 74px);
     transform: translateY(-50%);
     i {
       color: $colorPrimary;
       position: absolute;
-      top: 20px;
-      left: 20px;
-      font-size: 20px;
+      top: 24px;
+      left: 22px;
+      font-size: 22px;
     }
   }
 
@@ -881,9 +882,17 @@
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-delay: 5.5s;
-    top: calc(50% + 137px);
-    left: calc($firstBox + $secondLineWidth + $thirdBoxWidth + 120px);
+    top: calc(50% + 140px);
+    left: calc($firstBox + $secondLineWidth + $thirdBoxWidth + 123px);
     transform: translateY(-50%);
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    color: $colorPrimary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0;
     i {
       color: $colorPrimary;
       position: absolute;
@@ -915,9 +924,9 @@
     i {
       color: $colorPrimary;
       position: absolute;
-      top: 20px;
-      left: 20px;
-      font-size: 20px;
+      top: 23px;
+      left: 12px;
+      font-size: 24px;
     }
   }
   @keyframes ninethBoxAm {
@@ -948,12 +957,21 @@
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-delay: 7s;
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    color: $colorPrimary;
+    cursor: pointer;
     i {
       color: $colorPrimary;
       position: absolute;
       top: 20px;
       left: 20px;
       font-size: 20px;
+    }
+    p {
+      text-align: center;
+      padding-top: 5px;
     }
   }
 
@@ -965,8 +983,8 @@
     }
 
     100% {
-      top: calc(50% + 170px);
-      left: calc($firstBox + $secondLineWidth - 226px);
+      top: calc(50% + 176px);
+      left: calc($firstBox + $secondLineWidth - 232px);
       transform: translateY(-50%);
       width: $tenthBoxWidth;
     }
