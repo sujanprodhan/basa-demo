@@ -697,16 +697,16 @@
       left: 50%;
     }
 
-    30% {
-      left: 40%;
-    }
-
     50% {
       left: 40%;
     }
 
-    100% {
+    70% {
       left: 20%;
+    }
+
+    100% {
+      left: 0%;
     }
   }
 
@@ -1043,26 +1043,28 @@
       width: $commonBoxWidth;
     }
   }
+
+  //ই-ডিরেক্টরি
   .thirteenthBoxMenu {
     position: absolute;
     height: 127px;
-    width: 277px;
+    width: 0;
     background-image: url("/images/banner/13.png");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    // animation-name: tenthBoxMenuAm;
+    animation-name: commonBoxMenuAM;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
-    animation-delay: 7s;
+    animation-delay: 9s;
     font-size: 22px;
     text-align: center;
     font-weight: bold;
     color: $colorPrimary;
     cursor: pointer;
-    top: calc(50% - 81px);
+    top: calc(50% - 84px);
     left: calc(
       $firstBox + $secondLineWidth + $thirdBoxWidth + $eleventhBoxWidth + 66px +
-        52px
+        46px
     );
     transform: translateY(-50%);
     i {
@@ -1073,11 +1075,79 @@
       font-size: 20px;
     }
     p {
-      distext-align: center;
-      padding-top: 15px;
+      text-align: center;
+      padding-top: 25px;
     }
   }
 
+  .fourteenBox {
+    position: absolute;
+    height: $commonBoxWidth;
+    background-image: url("/images/banner/14.png");
+    background-size: cover;
+    animation-name: commonBoxAm;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 9.5s;
+    top: calc(50% - 8px);
+    left: calc(
+      $firstBox + $secondLineWidth + $thirdBoxWidth + $eleventhBoxWidth + 277px +
+        101px
+    );
+    transform: translateY(-50%);
+    i {
+      color: $colorPrimary;
+      position: absolute;
+      top: 27px;
+      left: 27px;
+      font-size: 20px;
+    }
+  }
+
+  //অন্যান্য menu
+  .fifteenBoxmenu {
+    position: absolute;
+    height: 127px;
+    width: 0;
+    background-image: url("/images/banner/15.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation-name: commonBoxMenuAM;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 10s;
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    color: $colorPrimary;
+    cursor: pointer;
+    top: calc(50% + 77px);
+    left: calc(
+      $firstBox + $secondLineWidth + $thirdBoxWidth + $eleventhBoxWidth + 277px +
+        101px + 54px
+    );
+    transform: translateY(-50%);
+    i {
+      color: $colorPrimary;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 20px;
+    }
+    p {
+      text-align: center;
+      padding-top: 35px;
+    }
+  }
+
+  @keyframes commonBoxMenuAM {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 277px;
+    }
+  }
   // End animation area
 }
 

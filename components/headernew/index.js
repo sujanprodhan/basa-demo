@@ -301,10 +301,12 @@ export default function Home() {
           {startAnimation && (
             <div className={style.sliderArea}>
               <div className={style.animationArea}>
-                <div className={style.firstBox} onClick={() => mobileMenu()}>
-                  সদস্য <br />
-                  প্রোফাইল
-                </div>
+                <a href="#" target="_blank">
+                  <div className={style.firstBox}>
+                    সদস্য <br />
+                    প্রোফাইল
+                  </div>
+                </a>
                 <div className={style.secondLine}> </div>
                 <div className={style.thirdBox}> </div>
                 <div className={style.fourthdBox}> </div>
@@ -339,7 +341,14 @@ export default function Home() {
                   </div>
                 </a>
                 <div className={style.fourteenBox}>
-                  <i className="fa-solid fa-book"></i>
+                  <i class="fa-sharp fa-solid fa-angles-right"></i>
+                </div>
+
+                <div
+                  className={style.fifteenBoxmenu}
+                  onClick={() => mobileMenu()}
+                >
+                  <p> অন্যান্য </p>
                 </div>
               </div>
             </div>
