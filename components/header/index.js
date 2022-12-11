@@ -300,7 +300,7 @@ export default function Home() {
 
           {startAnimation && (
             <div className={style.sliderArea}>
-              <Lottie loop={true} animationData={sliderAnimation1} />
+              <Lottie loop={false} animationData={sliderAnimation1} />
             </div>
           )}
 

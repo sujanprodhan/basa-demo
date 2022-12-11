@@ -849,10 +849,11 @@
       transform: translateY(-50%);
     }
   }
-  $seventhBoxWidth: 62px;
+
+  $commonBoxWidth: 62px;
   .seventhBox {
     position: absolute;
-    height: 62px;
+    height: $commonBoxWidth;
     background-image: url("/images/banner/7.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -912,7 +913,7 @@
 
   .ninethBox {
     position: absolute;
-    height: 62px;
+    height: $commonBoxWidth;
     width: 0;
     background-image: url("/images/banner/9.png");
     background-size: contain;
@@ -941,7 +942,7 @@
       top: calc(50% + 93px);
       left: calc($firstBox + $secondLineWidth - 45px);
       transform: translateY(-50%);
-      width: 62px;
+      width: $commonBoxWidth;
     }
   }
 
@@ -989,6 +990,95 @@
       width: $tenthBoxWidth;
     }
   }
+  $eleventhBoxWidth: 278px;
+  .eleventhLine {
+    position: absolute;
+    height: 46px;
+    background-image: url("/images/banner/11.png");
+    background-size: cover;
+    animation-name: eleventhLineAm;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 7.5s;
+    top: calc(50% - 50px);
+    left: calc($firstBox + $secondLineWidth + $thirdBoxWidth + 77px);
+    transform: translateY(-50%);
+  }
+  @keyframes eleventhLineAm {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: $eleventhBoxWidth;
+    }
+  }
+  .twelvethBox {
+    position: absolute;
+    height: $commonBoxWidth;
+    background-image: url("/images/banner/12.png");
+    background-size: cover;
+    animation-name: commonBoxAm;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 8.5s;
+    top: calc(50% - 6px);
+    left: calc(
+      $firstBox + $secondLineWidth + $thirdBoxWidth + $eleventhBoxWidth + 66px
+    );
+    transform: translateY(-50%);
+    i {
+      color: $colorPrimary;
+      position: absolute;
+      top: 25px;
+      left: 27px;
+      font-size: 20px;
+    }
+  }
+
+  @keyframes commonBoxAm {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: $commonBoxWidth;
+    }
+  }
+  .thirteenthBoxMenu {
+    position: absolute;
+    height: 127px;
+    width: 277px;
+    background-image: url("/images/banner/13.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    // animation-name: tenthBoxMenuAm;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 7s;
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    color: $colorPrimary;
+    cursor: pointer;
+    top: calc(50% - 81px);
+    left: calc(
+      $firstBox + $secondLineWidth + $thirdBoxWidth + $eleventhBoxWidth + 66px +
+        52px
+    );
+    transform: translateY(-50%);
+    i {
+      color: $colorPrimary;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      font-size: 20px;
+    }
+    p {
+      distext-align: center;
+      padding-top: 15px;
+    }
+  }
+
+  // End animation area
 }
 
 @keyframes rightMenuAm {

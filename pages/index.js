@@ -12,7 +12,7 @@ import Feature from "../components/feature";
 export default function Home() {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <HeaderNew />
       <Story />
       <IntroTopBG />

@@ -311,11 +311,11 @@ export default function Home() {
                 <div className={style.fifthBox}> </div>
                 <div className={style.sixthBox}> </div>
                 <div className={style.seventhBox}>
-                  <i className="fa-solid fa-users"></i>
+                  <i class="fa-solid fa-money-bill"></i>
                 </div>
                 <a href="#" target="_blank">
                   <div className={style.eighthBoxMenu}>
-                    <i className="fa-solid fa-setting"></i>
+                    {/* <i className="fa-solid fa-setting"></i> */}
                     <p>চাঁদা</p>
                   </div>
                 </a>
@@ -329,6 +329,18 @@ export default function Home() {
                     <p>জনসেবায় এসোসিয়েশন </p>
                   </div>
                 </a>
+                <div className={style.eleventhLine}> </div>
+                <div className={style.twelvethBox}>
+                  <i className="fa-solid fa-book"></i>
+                </div>
+                <a href="#" target="_blank">
+                  <div className={style.thirteenthBoxMenu}>
+                    <p>ই-ডিরেক্টরি </p>
+                  </div>
+                </a>
+                <div className={style.fourteenBox}>
+                  <i className="fa-solid fa-book"></i>
+                </div>
               </div>
             </div>
           )}
