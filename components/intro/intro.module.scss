@@ -123,6 +123,7 @@
     }
 
     .designation {
+      white-space: pre-line;
       position: relative;
       font-weight: bold;
       opacity: 0;
@@ -177,7 +178,7 @@
       line-height: 24px;
       opacity: 0;
       display: -webkit-box;
-      -webkit-line-clamp: 10;
+      -webkit-line-clamp: 11;
       -webkit-box-orient: vertical;
       overflow: hidden;
       width: 70%;

@@ -19,15 +19,17 @@ export default function Story() {
           <div ref={ref} className={style.storyWrapper}>
             <div className={style.tabMenu}>
               <div
-                className={`${style.tabMenuItem} ${!menuActiveIndex && style.tabMenuItemActive
-                  }`}
+                className={`${style.tabMenuItem} ${
+                  !menuActiveIndex && style.tabMenuItemActive
+                }`}
                 onClick={() => resetAnimation(0)}
               >
                 সাম্প্রতিক কার্যক্রম
               </div>
               <div
-                className={`${style.tabMenuItem} ${menuActiveIndex && style.tabMenuItemActive
-                  }`}
+                className={`${style.tabMenuItem} ${
+                  menuActiveIndex && style.tabMenuItemActive
+                }`}
                 onClick={() => resetAnimation(1)}
               >
                 সফলতার গল্প
@@ -78,7 +80,7 @@ export default function Story() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        বিস্তারিত
+                        আরও দেখুন
                       </a>
                     </div>
                   </div>
@@ -293,7 +295,7 @@ export default function Story() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        বিস্তারিত
+                        আরও দেখুন
                       </a>
                     </div>
                   </div>
