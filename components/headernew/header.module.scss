@@ -647,22 +647,32 @@
 // SLider area animation started
 .sliderArea {
   // init all var here
-  $firstBox: 160px;
-  $thirdBoxWidth: 101px;
-  $commonBoxWidth: 62px;
-  $tenthBoxWidth: 200px;
+  --firstBox: 160px;
+  --thirdBoxWidth: 101px;
+  --commonBoxWidth: 62px;
   --eleventhBoxWidth: 278px;
   --secondLineWidth: 350px;
   --commonBoxMenuWidth: 278px;
+  --commonBoxMenuHeight: 127px;
+  --boxMenuFontSize: 20px;
+  --topPosition: 50%;
+  --tenthBoxMenuCutLeft: 10px;
   @include devices(medium) {
-    --secondLineWidth: 140px;
-    --eleventhBoxWidth: 140px;
-    --commonBoxMenuWidth: 170px;
+    --secondLineWidth: 250px;
+    --eleventhBoxWidth: 180px;
+    --commonBoxMenuWidth: 180px;
+    --firstBox: 140px;
+    --tenthBoxMenuCutLeft: 30px;
   }
   @include devices(xsmpc) {
     --secondLineWidth: 80px;
     --eleventhBoxWidth: 120px;
     --commonBoxMenuWidth: 120px;
+    --firstBox: 130px;
+    --boxMenuFontSize: 20px;
+  }
+  @include devices(tablet) {
+    --firstBox: 120px;
   }
   // End var for animation
   position: absolute;
@@ -683,6 +693,7 @@
   @include devices(medium) {
     border: 1px solid black;
     width: 90%;
+    max-width: 1200px;
     margin: auto;
   }
 
@@ -740,14 +751,14 @@
   }
 
   .firstBox {
-    height: $firstBox;
-    width: $firstBox;
+    height: var(--firstBox);
+    width: var(--firstBox);
     background: $animationBg;
     border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
+    font-size: var(--boxMenuFontSize);
     text-align: center;
     font-weight: bold;
     color: $colorPrimary;
@@ -767,7 +778,7 @@
     }
     100% {
       bottom: unset;
-      top: 50%;
+      top: var(--topPosition);
       transform: translateY(-50%) rotate(360deg);
     }
   }
@@ -782,8 +793,8 @@
     animation-duration: 1s;
     animation-fill-mode: forwards;
     animation-delay: 2s;
-    top: 50%;
-    left: $firstBox;
+    top: var(--topPosition);
+    left: var(--firstBox);
     transform: translateY(-50%);
     @include devices(medium) {
       border-radius: 0 0 20px 0;
@@ -807,8 +818,8 @@
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-delay: 3s;
-    top: calc(50% - 33px);
-    left: calc($firstBox + var(--secondLineWidth) - 7px);
+    top: calc(var(--topPosition) - 33px);
+    left: calc(var(--firstBox) + var(--secondLineWidth) - 7px);
     transform: translateY(-50%);
   }
   @keyframes lefttoRightAm {
@@ -816,7 +827,7 @@
       width: 0px;
     }
     100% {
-      width: $thirdBoxWidth;
+      width: var(--thirdBoxWidth);
     }
   }
 
@@ -829,8 +840,10 @@
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-delay: 3.5s;
-    top: calc(50% - 84px);
-    left: calc($firstBox + var(--secondLineWidth) + $thirdBoxWidth - 15px);
+    top: calc(var(--topPosition) - 84px);
+    left: calc(
+      var(--firstBox) + var(--secondLineWidth) + var(--thirdBoxWidth) - 15px
+    );
     transform: translateY(-50%);
   }
 
@@ -843,8 +856,10 @@
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-delay: 4s;
-    top: calc(50% + 10px);
-    left: calc($firstBox + var(--secondLineWidth) + $thirdBoxWidth - 15px);
+    top: calc(var(--topPosition) + 10px);
+    left: calc(
+      var(--firstBox) + var(--secondLineWidth) + var(--thirdBoxWidth) - 15px
+    );
     transform: translateY(-50%);
   }
 
@@ -859,31 +874,35 @@
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-delay: 4.5s;
-    top: calc(50% + 53px);
-    left: calc($firstBox + var(--secondLineWidth) + $thirdBoxWidth - 98px);
+    top: calc(var(--topPosition) + 53px);
+    left: calc(
+      var(--firstBox) + var(--secondLineWidth) + var(--thirdBoxWidth) - 98px
+    );
     transform: translateY(-50%);
   }
   @keyframes sixthBoxAm {
     0% {
       width: 0;
-      top: calc(50% + 53px);
+      top: calc(var(--topPosition) + 53px);
       left: calc(
-        $firstBox + var(--secondLineWidth) + $thirdBoxWidth - 98px +
-          $thirdBoxWidth
+        var(--firstBox) + var(--secondLineWidth) + var(--thirdBoxWidth) - 98px +
+          var(--thirdBoxWidth)
       );
     }
     100% {
-      width: $thirdBoxWidth;
+      width: var(--thirdBoxWidth);
       height: 44px;
-      top: calc(50% + 53px);
-      left: calc($firstBox + var(--secondLineWidth) + $thirdBoxWidth - 98px);
+      top: calc(var(--topPosition) + 53px);
+      left: calc(
+        var(--firstBox) + var(--secondLineWidth) + var(--thirdBoxWidth) - 98px
+      );
       transform: translateY(-50%);
     }
   }
 
   .seventhBox {
     position: absolute;
-    height: $commonBoxWidth;
+    height: var(--commonBoxWidth);
     background-image: url("/images/banner/7.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -891,8 +910,10 @@
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-delay: 5s;
-    top: calc(50% + 59px);
-    left: calc($firstBox + var(--secondLineWidth) + $thirdBoxWidth + 74px);
+    top: calc(var(--topPosition) + 59px);
+    left: calc(
+      var(--firstBox) + var(--secondLineWidth) + var(--thirdBoxWidth) + 74px
+    );
     transform: translateY(-50%);
     i {
       color: $colorPrimary;
@@ -903,9 +924,10 @@
     }
   }
 
+  // menu চাঁদা
   .eighthBoxMenu {
     position: absolute;
-    height: 127px;
+    height: var(--commonBoxMenuHeight);
     background-image: url("/images/banner/8.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -914,9 +936,11 @@
     animation-fill-mode: forwards;
     animation-delay: 5.5s;
     top: calc(50% + 140px);
-    left: calc($firstBox + var(--secondLineWidth) + $thirdBoxWidth + 123px);
+    left: calc(
+      var(--firstBox) + var(--secondLineWidth) + var(--thirdBoxWidth) + 123px
+    );
     transform: translateY(-50%);
-    font-size: 22px;
+    font-size: var(--boxMenuFontSize);
     text-align: center;
     font-weight: bold;
     color: $colorPrimary;
@@ -931,19 +955,23 @@
       left: 20px;
       font-size: 20px;
     }
+    p {
+      padding-top: 25px;
+    }
   }
   @keyframes eighthBoxMenuAm {
     0% {
       width: 0;
     }
     100% {
-      width: 227px;
+      // width: 227px;
+      width: var(--commonBoxMenuWidth);
     }
   }
 
   .ninethBox {
     position: absolute;
-    height: $commonBoxWidth;
+    height: var(--commonBoxWidth);
     width: 0;
     background-image: url("/images/banner/9.png");
     background-size: contain;
@@ -963,22 +991,23 @@
   @keyframes ninethBoxAm {
     0% {
       width: 0;
-      top: calc(50% + 93px);
-      left: calc($firstBox + var(--secondLineWidth));
+      top: calc(var(--topPosition) + 93px);
+      left: calc(var(--firstBox) + var(--secondLineWidth));
       transform: translateY(-50%);
     }
 
     100% {
-      top: calc(50% + 93px);
-      left: calc($firstBox + var(--secondLineWidth) - 45px);
+      top: calc(var(--topPosition) + 93px);
+      left: calc(var(--firstBox) + var(--secondLineWidth) - 45px);
       transform: translateY(-50%);
-      width: $commonBoxWidth;
+      width: var(--commonBoxWidth);
     }
   }
 
+  // menu  জনসেবায়   এসোসিয়েশন
   .tenthBoxMenu {
     position: absolute;
-    height: 127px;
+    height: var(--commonBoxMenuHeight);
     width: 0;
     background-image: url("/images/banner/10.png");
     background-size: contain;
@@ -987,7 +1016,7 @@
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-delay: 7s;
-    font-size: 22px;
+    font-size: var(--boxMenuFontSize);
     text-align: center;
     font-weight: bold;
     color: $colorPrimary;
@@ -1001,22 +1030,26 @@
     }
     p {
       text-align: center;
-      padding-top: 5px;
+      padding-top: 25px;
+      margin-left: -14px;
     }
   }
 
   @keyframes tenthBoxMenuAm {
     0% {
       width: 0;
-      top: calc(50% + 100px);
-      left: calc($firstBox + var(--secondLineWidth) - 226px + $tenthBoxWidth);
+      top: calc(var(--topPosition) + 123px);
+      left: calc(var(--firstBox) + var(--secondLineWidth) - 43px);
     }
 
     100% {
-      top: calc(50% + 176px);
-      left: calc($firstBox + var(--secondLineWidth) - 232px);
+      top: calc(var(--topPosition) + 173px);
+      left: calc(
+        var(--firstBox) + var(--secondLineWidth) - var(--commonBoxMenuWidth) -
+          var(--tenthBoxMenuCutLeft)
+      );
       transform: translateY(-50%);
-      width: $tenthBoxWidth;
+      width: var(--commonBoxMenuWidth);
     }
   }
 
@@ -1029,8 +1062,10 @@
     animation-duration: 1s;
     animation-fill-mode: forwards;
     animation-delay: 7.5s;
-    top: calc(50% - 50px);
-    left: calc($firstBox + var(--secondLineWidth) + $thirdBoxWidth + 77px);
+    top: calc(var(--topPosition) - 50px);
+    left: calc(
+      var(--firstBox) + var(--secondLineWidth) + var(--thirdBoxWidth) + 77px
+    );
     transform: translateY(-50%);
     @include devices(medium) {
       border-radius: 0 25px 0 0;
@@ -1046,16 +1081,16 @@
   }
   .twelvethBox {
     position: absolute;
-    height: $commonBoxWidth;
+    height: var(--commonBoxWidth);
     background-image: url("/images/banner/12.png");
     background-size: cover;
     animation-name: commonBoxAm;
     animation-duration: 1s;
     animation-fill-mode: forwards;
     animation-delay: 8.5s;
-    top: calc(50% - 6px);
+    top: calc(var(--topPosition) - 6px);
     left: calc(
-      $firstBox + var(--secondLineWidth) + $thirdBoxWidth +
+      var(--firstBox) + var(--secondLineWidth) + var(--thirdBoxWidth) +
         var(--eleventhBoxWidth) + 66px
     );
     transform: translateY(-50%);
@@ -1073,31 +1108,33 @@
       width: 0;
     }
     100% {
-      width: $commonBoxWidth;
+      width: var(--commonBoxWidth);
     }
   }
 
-  //ই-ডিরেক্টরি
+  // menu ই-ডিরেক্টরি
   .thirteenthBoxMenu {
     position: absolute;
-    height: 127px;
+    height: var(--commonBoxMenuHeight);
     width: 0;
     background-image: url("/images/banner/13.png");
+    background-size: 100% 100%;
     background-size: cover;
     background-repeat: no-repeat;
     animation-name: commonBoxMenuAM;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-delay: 9s;
-    font-size: 22px;
+    font-size: var(--boxMenuFontSize);
     text-align: center;
     font-weight: bold;
     color: $colorPrimary;
     cursor: pointer;
-    top: calc(50% - 84px);
+    top: calc(var(--topPosition) - 78px);
     left: calc(
-      $firstBox + var(--secondLineWidth) + $thirdBoxWidth +
-        var(--eleventhBoxWidth) + 66px + 46px
+      var(--firstBox) + var(--secondLineWidth) + var(--thirdBoxWidth) +
+        var(--eleventhBoxWidth) + var(--commonBoxWidth) + var(--commonBoxWidth) -
+        8px
     );
     transform: translateY(-50%);
     i {
@@ -1115,16 +1152,16 @@
 
   .fourteenBox {
     position: absolute;
-    height: $commonBoxWidth;
+    height: var(--commonBoxWidth);
     background-image: url("/images/banner/14.png");
     background-size: cover;
     animation-name: commonBoxAm;
     animation-duration: 1s;
     animation-fill-mode: forwards;
     animation-delay: 9.5s;
-    top: calc(50% - 8px);
+    top: calc(var(--topPosition) - 8px);
     left: calc(
-      $firstBox + var(--secondLineWidth) + $thirdBoxWidth +
+      var(--firstBox) + var(--secondLineWidth) + var(--thirdBoxWidth) +
         var(--eleventhBoxWidth) + var(--commonBoxMenuWidth) + 101px
     );
     transform: translateY(-50%);
@@ -1137,10 +1174,10 @@
     }
   }
 
-  //অন্যান্য menu
+  // menu অন্যান্য menu
   .fifteenBoxmenu {
     position: absolute;
-    height: 127px;
+    height: var(--commonBoxMenuHeight);
     width: 0;
     background-image: url("/images/banner/15.png");
     background-size: contain;
@@ -1149,14 +1186,14 @@
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-delay: 10s;
-    font-size: 22px;
+    font-size: var(--boxMenuFontSize);
     text-align: center;
     font-weight: bold;
     color: $colorPrimary;
     cursor: pointer;
-    top: calc(50% + 77px);
+    top: calc(var(--topPosition) + 77px);
     left: calc(
-      $firstBox + var(--secondLineWidth) + $thirdBoxWidth +
+      var(--firstBox) + var(--secondLineWidth) + var(--thirdBoxWidth) +
         var(--eleventhBoxWidth) + var(--commonBoxMenuWidth) + 101px + 54px
     );
     transform: translateY(-50%);

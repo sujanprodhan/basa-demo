@@ -328,7 +328,10 @@ export default function Home() {
                 <a href="#" target="_blank">
                   <div className={style.tenthBoxMenu}>
                     {/* <i class="fa-solid fa-users-gear"></i> */}
-                    <p>জনসেবায় এসোসিয়েশন </p>
+                    <p>
+                      জনসেবায় <br />
+                      এসোসিয়েশন{" "}
+                    </p>
                   </div>
                 </a>
                 <div className={style.eleventhLine}> </div>
