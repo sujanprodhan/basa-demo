@@ -647,6 +647,7 @@
 // SLider area animation started
 .sliderArea {
   // init all var here
+  --vh: 60vh;
   --firstBox: 160px;
   --thirdBoxWidth: 101px;
   --commonBoxWidth: 62px;
@@ -656,20 +657,51 @@
   --commonBoxMenuHeight: 127px;
   --boxMenuFontSize: 20px;
   --topPosition: 50%;
-  --tenthBoxMenuCutLeft: 10px;
+  --tenthBoxMenuCutLeft: 30px;
+  --fourteenBoxCutLeft: 12px;
+  --fifteenBoxmenuCutLeft: 20px;
+  //padding related
+  --eighthBoxMenuPaddingTop: 40px;
+  --tenthBoxMenuPaddingTop: 25px;
+  --thirteenthBoxMenuPaddingTop: 25px;
+  --fifteenBoxmenuPaddingTop: 35px;
   @include devices(medium) {
+    --vh: 65vh;
+    --topPosition: 45%;
     --secondLineWidth: 250px;
     --eleventhBoxWidth: 180px;
     --commonBoxMenuWidth: 180px;
     --firstBox: 140px;
     --tenthBoxMenuCutLeft: 30px;
+    --eighthBoxMenuPaddingTop: 18px;
+    --tenthBoxMenuPaddingTop: 5px;
+    --thirteenthBoxMenuPaddingTop: 45px;
+    --fifteenBoxmenuPaddingTop: 15px;
   }
-  @include devices(xsmpc) {
-    --secondLineWidth: 80px;
-    --eleventhBoxWidth: 120px;
-    --commonBoxMenuWidth: 120px;
+  @include devices(spc) {
+    --secondLineWidth: 190px;
+    --eleventhBoxWidth: 170px;
+    --commonBoxMenuWidth: 180px;
     --firstBox: 130px;
-    --boxMenuFontSize: 20px;
+    --boxMenuFontSize: 15px;
+
+    --eighthBoxMenuPaddingTop: 25px;
+    --tenthBoxMenuPaddingTop: 15px;
+    --thirteenthBoxMenuPaddingTop: 50px;
+    --fifteenBoxmenuPaddingTop: 25px;
+  }
+
+  @include devices(xsmpc) {
+    --secondLineWidth: 110px;
+    --eleventhBoxWidth: 130px;
+    --commonBoxMenuWidth: 120px;
+    --firstBox: 120px;
+    --boxMenuFontSize: 15px;
+
+    --eighthBoxMenuPaddingTop: 10px;
+    --tenthBoxMenuPaddingTop: 0px;
+    --thirteenthBoxMenuPaddingTop: 70px;
+    --fifteenBoxmenuPaddingTop: 10px;
   }
   @include devices(tablet) {
     --firstBox: 120px;
@@ -678,22 +710,33 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  height: 60vh;
+  height: var(--vh);
   z-index: 0;
   overflow: hidden;
   transform: translate(-50%, -50%);
 
   @include devices(pc) {
-    border: 1px solid red;
+    // border: 1px solid red;
     width: 85%;
     max-width: 1600px;
     margin: auto;
   }
 
   @include devices(medium) {
-    border: 1px solid black;
+    // border: 1px solid black;
     width: 90%;
     max-width: 1200px;
+    margin: auto;
+  }
+  @include devices(spc) {
+    width: 95%;
+    max-width: 1120px;
+  }
+
+  @include devices(xsmpc) {
+    // border: 1px solid white;
+    width: 90%;
+    max-width: 900px;
     margin: auto;
   }
 
@@ -929,13 +972,14 @@
     position: absolute;
     height: var(--commonBoxMenuHeight);
     background-image: url("/images/banner/8.png");
+    background-position: top left;
     background-size: contain;
     background-repeat: no-repeat;
     animation-name: eighthBoxMenuAm;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-delay: 5.5s;
-    top: calc(50% + 140px);
+    top: calc(var(--topPosition) + 140px);
     left: calc(
       var(--firstBox) + var(--secondLineWidth) + var(--thirdBoxWidth) + 123px
     );
@@ -944,9 +988,7 @@
     text-align: center;
     font-weight: bold;
     color: $colorPrimary;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
     width: 0;
     i {
       color: $colorPrimary;
@@ -956,7 +998,7 @@
       font-size: 20px;
     }
     p {
-      padding-top: 25px;
+      padding-top: var(--eighthBoxMenuPaddingTop);
     }
   }
   @keyframes eighthBoxMenuAm {
@@ -1010,6 +1052,7 @@
     height: var(--commonBoxMenuHeight);
     width: 0;
     background-image: url("/images/banner/10.png");
+    background-position: top right;
     background-size: contain;
     background-repeat: no-repeat;
     animation-name: tenthBoxMenuAm;
@@ -1030,7 +1073,7 @@
     }
     p {
       text-align: center;
-      padding-top: 25px;
+      padding-top: var(--tenthBoxMenuPaddingTop);
       margin-left: -14px;
     }
   }
@@ -1118,8 +1161,8 @@
     height: var(--commonBoxMenuHeight);
     width: 0;
     background-image: url("/images/banner/13.png");
-    background-size: 100% 100%;
-    background-size: cover;
+    background-position: bottom left;
+    background-size: contain;
     background-repeat: no-repeat;
     animation-name: commonBoxMenuAM;
     animation-duration: 0.5s;
@@ -1146,7 +1189,7 @@
     }
     p {
       text-align: center;
-      padding-top: 25px;
+      padding-top: var(--thirteenthBoxMenuPaddingTop);
     }
   }
 
@@ -1162,8 +1205,17 @@
     top: calc(var(--topPosition) - 8px);
     left: calc(
       var(--firstBox) + var(--secondLineWidth) + var(--thirdBoxWidth) +
-        var(--eleventhBoxWidth) + var(--commonBoxMenuWidth) + 101px
+        var(--eleventhBoxWidth) + var(--commonBoxMenuWidth) +
+        var(--thirdBoxWidth) - var(--fourteenBoxCutLeft)
     );
+    @include devices(medium) {
+      top: calc(var(--topPosition) - 5px);
+      left: calc(
+        var(--firstBox) + var(--secondLineWidth) + var(--thirdBoxWidth) +
+          var(--eleventhBoxWidth) + var(--commonBoxMenuWidth) +
+          var(--thirdBoxWidth) - var(--fourteenBoxCutLeft) + 15px
+      );
+    }
     transform: translateY(-50%);
     i {
       color: $colorPrimary;
@@ -1179,7 +1231,7 @@
     position: absolute;
     height: var(--commonBoxMenuHeight);
     width: 0;
-    background-image: url("/images/banner/15.png");
+    background-image: url("/images/banner/15-new.png");
     background-size: contain;
     background-repeat: no-repeat;
     animation-name: commonBoxMenuAM;
@@ -1194,8 +1246,19 @@
     top: calc(var(--topPosition) + 77px);
     left: calc(
       var(--firstBox) + var(--secondLineWidth) + var(--thirdBoxWidth) +
-        var(--eleventhBoxWidth) + var(--commonBoxMenuWidth) + 101px + 54px
+        var(--eleventhBoxWidth) + var(--commonBoxMenuWidth) +
+        var(--thirdBoxWidth) + var(--commonBoxWidth) -
+        var(--fifteenBoxmenuCutLeft)
     );
+    @include devices(medium) {
+      top: calc(var(--topPosition) + 82px);
+      left: calc(
+        var(--firstBox) + var(--secondLineWidth) + var(--thirdBoxWidth) +
+          var(--eleventhBoxWidth) + var(--commonBoxMenuWidth) +
+          var(--thirdBoxWidth) + var(--commonBoxWidth) -
+          var(--fifteenBoxmenuCutLeft) + 15px
+      );
+    }
     transform: translateY(-50%);
     i {
       color: $colorPrimary;
@@ -1206,7 +1269,7 @@
     }
     p {
       text-align: center;
-      padding-top: 35px;
+      padding-top: var(--fifteenBoxmenuPaddingTop);
     }
   }
 
