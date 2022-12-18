@@ -210,13 +210,15 @@
   @include devices(tablet) {
     animation-name: leftMenuAmSP;
     border-radius: 0;
-    width: 80px;
-    height: 70px;
-    top: 10px;
+    width: 140px;
+    height: 50px;
+    border-radius: 5px;
+    top: 20px;
     left: 10px;
     z-index: 8;
     opacity: 1;
-    background-image: url("/images/logo-sp.png");
+    // background-image: url("/images/logo-sp.png");
+    background-image: url("/images/logo.png");
     background-color: white;
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -706,6 +708,16 @@
   @include devices(tablet) {
     --firstBox: 120px;
   }
+  @include devices(sp) {
+    --firstBox: 120px;
+    --vh: 85vh;
+  }
+  @include devices(spc) {
+    --firstBox: 120px;
+    --vh: 85vh;
+    border: 1px solid red;
+  }
+
   // End var for animation
   position: absolute;
   top: 50%;
@@ -749,8 +761,7 @@
   @include devices(sp) {
     top: 320px;
     width: 100%;
-    height: 43vh;
-    overflow: hidden;
+    height: 55vh;
     // > div{
     //   height: 500px !important;
     //   width: 400px !important;
@@ -765,12 +776,19 @@
   }
 
   .animationArea {
-    // border: 1px solid white;
     position: absolute;
     left: 50%;
     width: 100%;
     height: 100%;
     animation-name: animationAreaPosition;
+    @include devices(sp) {
+      animation-name: animationAreaPositionSP;
+      // border: 1px solid black;
+      overflow-x: scroll;
+      left: 30%;
+      width: 900px;
+    }
+
     animation-duration: 10s;
     animation-fill-mode: forwards;
     // animation-delay: 2s;
@@ -790,6 +808,23 @@
 
     100% {
       left: 0%;
+    }
+  }
+
+  @keyframes animationAreaPositionSP {
+    0% {
+      left: 30%;
+    }
+
+    50% {
+      left: -20%;
+    }
+
+    80% {
+      left: -60%;
+    }
+    100% {
+      left: -120%;
     }
   }
 

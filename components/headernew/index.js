@@ -224,14 +224,14 @@ export default function Home() {
           </div>
 
           <div className={style.headerTitleSP}>
-            <div className={style.headerTitleTextTopSP}>
+            {/* <div className={style.headerTitleTextTopSP}>
               <Image
                 src="/images/basa-logo-sp-old.jpg"
                 alt="logo"
                 height={50}
                 width={50}
               />
-            </div>
+            </div> */}
             <div className={style.headerTitleTextSP}>
               বাংলাদেশ অ্যাডমিনিস্ট্রেটিভ সার্ভিস এসোসিয়েশন
             </div>

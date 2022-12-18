@@ -45,12 +45,37 @@ export default function Footer() {
                 <div
                   className={
                     !inView
-                      ? style.phoneNumber
-                      : style.phoneNumber + " " + style.startAnimation2
+                      ? style.contacSection
+                      : style.contacSection + " " + style.startAnimation3
                   }
                 >
-                  <i className="fa-sharp fa-solid fa-square-phone"></i>
-                  <p> ০১৭১১-১১২২৩৩, ০১৭১১-১১২২৩৩, ০১৭১১-১১২২৩৩</p>
+                  <ul>
+                    <li>
+                      <div className={style.contactTitle}>
+                        এম.এ. মুহাইমিন আল জিহান
+                      </div>
+                      <div className={style.contactDesignation}>
+                        সহকারী পরিচালক (আইসিটি) (সিনিয়র সহকারী সচিব)
+                      </div>
+                      <div className={style.contactInfo}>
+                        {" "}
+                        <i className="fa-sharp fa-solid fa-square-phone"></i>{" "}
+                        +8801733990436
+                      </div>
+                    </li>
+                    <li>
+                      <div className={style.contactTitle}>
+                        মাহমুদুল হাসান রাসেল
+                      </div>
+                      <div className={style.contactDesignation}>
+                        সহকারী পরিচালক (এস্টেট ও উন্নয়ন) (সহকারী সচিব)
+                      </div>
+                      <div className={style.contactInfo}>
+                        <i className="fa-sharp fa-solid fa-square-phone"></i>
+                        +8801671953710
+                      </div>
+                    </li>
+                  </ul>
                 </div>
 
                 <div
