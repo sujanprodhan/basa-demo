@@ -55,7 +55,7 @@ export default function Footer() {
                         এম.এ. মুহাইমিন আল জিহান
                       </div>
                       <div className={style.contactDesignation}>
-                        সহকারী পরিচালক (আইসিটি) (সিনিয়র সহকারী সচিব)
+                        সহকারী পরিচালক (আইসিটি) (সিনিয়র সহকারী সচিব), বিয়াম
                       </div>
                       <div className={style.contactInfo}>
                         {" "}
@@ -68,7 +68,7 @@ export default function Footer() {
                         মাহমুদুল হাসান রাসেল
                       </div>
                       <div className={style.contactDesignation}>
-                        সহকারী পরিচালক (এস্টেট ও উন্নয়ন) (সহকারী সচিব)
+                        সহকারী পরিচালক (এস্টেট ও উন্নয়ন) (সহকারী সচিব), বিয়াম
                       </div>
                       <div className={style.contactInfo}>
                         <i className="fa-sharp fa-solid fa-square-phone"></i>

@@ -73,7 +73,7 @@
     }
 
     @include devices(medium) {
-      padding-top: 80px;
+      padding-top: 30px;
       width: 400px;
     }
     @include devices(spc) {
@@ -141,7 +141,7 @@
   .contacSection {
     opacity: 0;
     ul {
-      width: 750px;
+      width: 850px;
       margin: 30px auto 0;
       padding: 0;
       display: flex;

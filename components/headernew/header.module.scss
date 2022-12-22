@@ -509,7 +509,6 @@
     width: 50px !important;
   }
   .iconBorder {
-    border: 1px solid black;
     padding: 10px 20px;
     border-radius: 100%;
     cursor: pointer;
@@ -715,7 +714,6 @@
   @include devices(spc) {
     --firstBox: 120px;
     --vh: 85vh;
-    border: 1px solid red;
   }
 
   // End var for animation

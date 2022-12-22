@@ -161,9 +161,12 @@
       }
 
       .designationWidth {
-        width: 35%;
+        width: 45%;
         text-align: center;
         margin: 0 auto;
+        @include devices(spc) {
+          width: 60%;
+        }
         @include devices(tablet) {
           width: 60%;
         }
@@ -194,6 +197,7 @@
 
       @include devices(spc) {
         //  font-size: 1.1vw;
+        padding-top: 0px;
       }
       @include devices(xsmpc) {
         //  font-size: 16px;
@@ -277,6 +281,12 @@
   // left: calc(66% + 200px);
   // left: calc(66% + 200px);
   right: 70px;
+  @include devices(medium) {
+    right: 100px;
+  }
+  @include devices(spc) {
+    right: 70px;
+  }
   @include devices(tablet) {
     // bottom: 5%;
     // top: 29%;
