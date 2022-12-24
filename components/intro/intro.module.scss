@@ -17,6 +17,7 @@
       background-size: contain;
       background-position: top center;
       background-repeat: no-repeat;
+     
     }
 
     @include devices(medium) {
@@ -31,10 +32,9 @@
     }
 
     @include devices(spc) {
-      height: 610px;
-      background-size: 98vw;
+      height: 650px;     
       background-image: url("/images/intro/introbg.svg");
-      background-size: contain;
+      background-size: 100% 650px;
     }
 
     @include devices(xsmpc) {

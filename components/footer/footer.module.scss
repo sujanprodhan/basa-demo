@@ -30,20 +30,20 @@
   background-position: center;
   background-repeat: no-repeat;
   @include devices(pc) {
+    height: 460px;
+    background-image: url("/images/footer/1920.png");
+    background-size: 100% 460px;
+  }
+  @include devices(medium) {
     height: 400px;
     background-image: url("/images/footer/1920.png");
     background-size: 100% 400px;
   }
-  @include devices(medium) {
-    height: 350px;
-    background-image: url("/images/footer/1920.png");
-    background-size: 100% 350px;
-  }
 
   @include devices(spc) {
-    height: 350px;
+    height: 380px;
     background-image: url("/images/footer/1366.png");
-    background-size: 100%;
+    background-size: 100% 380px;
   }
 
   @include devices(tablet) {
@@ -142,7 +142,7 @@
     opacity: 0;
     ul {
       width: 850px;
-      margin: 30px auto 0;
+      margin: 20px auto 0;
       padding: 0;
       display: flex;
       align-items: center;
