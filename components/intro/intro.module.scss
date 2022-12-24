@@ -53,15 +53,19 @@
     @include devices(sp) {
       height: 890px;
       background-image: url("/images/intro/intro-mobile-bg.svg");
-      // background-size: 375px 1120px;
       background-position: left top;
+      background-color: $animationBg;
+      border-radius: 10px;
+      max-width: 100%;
     }
 
     @include devices(ssp) {
       height: 870px;
       background-image: url("/images/intro/intro-mobile-bg.svg");
-      background-size: unset;
-      background-position: top;
+      background-position: left top;
+      background-color: $animationBg;
+      border-radius: 10px;
+      max-width: 100%;
     }
 
     .icon {
@@ -203,21 +207,9 @@
         //  font-size: 16px;
       }
 
-      @include devices(tablet) {
-        // top: 38%;
-        // left: 10%;
-        padding-right: 100px;
-      }
-
-      // @include devices(sp) {
-      //   top: 26%;
-      //   left: 10%;
-      //   max-width: 85%;
-      //   line-height: 18px;
-      // }
-
+  
       @include devices(sp) {
-        left: 7%;
+         left: 7%;
         overflow: hidden;
         display: -webkit-box;
         -webkit-line-clamp: 14;
@@ -229,7 +221,7 @@
 
       @include devices(ssp) {
         overflow: hidden;
-        width: 82%;
+        // width: 82%;
         display: -webkit-box;
         -webkit-line-clamp: 14;
         -webkit-box-orient: vertical;

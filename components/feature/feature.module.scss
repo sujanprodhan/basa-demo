@@ -28,13 +28,18 @@ $bgActive: #f4f4f4;
   }
   @include devices(tablet) {
     // border: 1px solid red;
-    background-image: url("/images/feature/spbg.jpg");
+    // background-image: url("/images/feature/spbg.jpg");
     background-size: 98vw;
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
     width: 98%;
     min-height: 1050px;
+  }
+  @include devices(sp){
+    background: #008502;
+    border-radius: 10px;
+    min-height: 950px;
   }
   .innerBg {
     position: relative;

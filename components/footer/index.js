@@ -159,7 +159,7 @@ export default function Footer() {
                   : style.copyright + " " + style.startAnimation3
               }
             >
-              কপিরাইট &copy; ২০২২ সর্বস্বত্ব সংরক্ষিত গ্ণপ্রজাতন্ত্রী বাংলাদেশ
+              কপিরাইট &copy; ২০২২ সর্বস্বত্ব সংরক্ষিত গণপ্রজাতন্ত্রী  বাংলাদেশ
               সরকার
             </div>
           </div>
