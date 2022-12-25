@@ -81,17 +81,20 @@
         .hoverBg1 {
           display: block;
           z-index: 88;
-          height: 90px;
-          width: 160px;
-          background-image: url("/images/galary/hoverbg.svg");
-          background-size: 160px 90px;
+          height: 30px;
+          width: auto;
+          // background-image: url("/images/galary/hoverbg.svg");
+          background-color: white;
+          // background-size: 160px 90px;
           background-repeat: no-repeat;
           position: absolute;
           top: 20px;
-          left: 50px;
-          padding-top: 20px;
-          padding-left: 20px;
+          left: 30px;
+          padding: 10px 20px 0;
           color: $colorPrimary;
+          border-radius: 10px;
+          // left: 50%;
+          // transform: translateX(-50%);
         }
         .hover1 {
           display: block;
