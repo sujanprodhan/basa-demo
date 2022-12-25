@@ -200,9 +200,6 @@ export default function Feature() {
                 <a href="javascript:void(0)"> জেলা কমিটি </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> উপজেলা কমিটি </a>
-              </li>
-              <li>
                 <a href="javascript:void(0)"> ব্যাচভিত্তিক কমিটি </a>
               </li>
             </ul>

@@ -15,12 +15,13 @@ export default function Home() {
       {/* <Header /> */}
       <HeaderNew />
       <Story />
+      
       <IntroTopBG />
       <Intro />
       <Feature />
       <PhotoGalary />
       <VideoGallary />
-      <Footer />
+      <Footer /> 
     </>
   );
 }

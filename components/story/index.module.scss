@@ -145,7 +145,8 @@
             position: relative;
             bottom: -318px;
             left: -250px;
-            overflow: hidden;
+            overflow-y: hidden;
+            overflow-x: scroll;
             // width: 100%;
             height: 330px;
             overflow-x: scroll;
@@ -153,11 +154,13 @@
           }
           @include devices(sp) {
             left: -16vw;
-            min-width: min(100vw, 700px);
+            min-width: min(87vw, 700px);
+            overflow-y: hidden;
+            overflow-x: scroll;
           }
           @include devices(ssp) {
             left: -20px;
-            min-width: min(100vw, 500px);
+            min-width: min(93vw, 500px);
           }
           .storyContainer {
             display: none;

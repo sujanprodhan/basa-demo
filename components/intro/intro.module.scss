@@ -212,7 +212,7 @@
          left: 7%;
         overflow: hidden;
         display: -webkit-box;
-        -webkit-line-clamp: 14;
+        -webkit-line-clamp: 16;
         -webkit-box-orient: vertical;
         font-size: 16px;
         margin: auto;
@@ -221,9 +221,8 @@
 
       @include devices(ssp) {
         overflow: hidden;
-        // width: 82%;
         display: -webkit-box;
-        -webkit-line-clamp: 14;
+        -webkit-line-clamp: 16;
         -webkit-box-orient: vertical;
         font-size: 16px;
       }
