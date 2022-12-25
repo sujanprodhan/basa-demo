@@ -95,6 +95,12 @@
           border-radius: 10px;
           // left: 50%;
           // transform: translateX(-50%);
+          @include devices(sp){
+            top: 5px;
+            left: 5px;
+            height: 25px;
+            padding: 7px 10px 0;
+          }
         }
         .hover1 {
           display: block;
