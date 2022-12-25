@@ -42,6 +42,7 @@ export default function Footer() {
                   />
                 </div>
 
+
                 <div
                   className={
                     !inView
@@ -49,11 +50,13 @@ export default function Footer() {
                       : style.contacSection + " " + style.startAnimation3
                   }
                 >
+
+                  <div className={style.contactText}>  যোগাযোগ </div>
                   <ul>
                     <li>
-                      <div className={style.contactTitle}>
+                      {/* <div className={style.contactTitle}>
                         এম.এ. মুহাইমিন আল জিহান
-                      </div>
+                      </div> */}
                       <div className={style.contactDesignation}>
                         সহকারী পরিচালক (আইসিটি) (সিনিয়র সহকারী সচিব), বিয়াম
                       </div>
@@ -64,9 +67,9 @@ export default function Footer() {
                       </div>
                     </li>
                     <li>
-                      <div className={style.contactTitle}>
+                      {/* <div className={style.contactTitle}>
                         মাহমুদুল হাসান রাসেল
-                      </div>
+                      </div> */}
                       <div className={style.contactDesignation}>
                         সহকারী পরিচালক (এস্টেট ও উন্নয়ন) (সহকারী সচিব), বিয়াম
                       </div>

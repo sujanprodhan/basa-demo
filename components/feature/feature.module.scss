@@ -1,12 +1,13 @@
 @import "styles/variables.scss";
 @import "styles/mixin.scss";
-$mainHeight: 900px;
+$mainHeight: 960px;
 $innerHeight: 527px;
 $bgActive: #f4f4f4;
 
 @include devices(spc) {
   $roundBoxWidth: 160px;
 }
+
 .feature {
   position: relative;
   font-family: $fontFamily;
@@ -15,32 +16,47 @@ $bgActive: #f4f4f4;
   background-size: contain;
   background-position: top center;
   background-repeat: no-repeat;
-  width: 80%;
+  width: 1500px;
+
+  @include devices(medium) {
+    width: 1400px;
+    background-size: 100% 960px;
+  }
+
+  @include devices(xsmpc) {
+    width: 1000px;
+    background-size: 100% 900px;
+  }
+
   height: $mainHeight;
   margin: 0px auto 80px;
-  // border: 1px solid black;
+
   @include devices(medium) {
     margin-top: 80px;
+    height: 960px;
   }
+
   @include devices(spc) {
     width: 98%;
     margin-top: 80px;
   }
+
   @include devices(tablet) {
-    // border: 1px solid red;
-    // background-image: url("/images/feature/spbg.jpg");
     background-size: 98vw;
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
     width: 98%;
-    min-height: 1050px;
+    max-height: 600px;
+    background: #008502;
   }
-  @include devices(sp){
+
+  @include devices(sp) {
     background: #008502;
     border-radius: 10px;
-    min-height: 950px;
+    min-height: 700px;
   }
+
   .innerBg {
     position: relative;
     width: 90%;
@@ -52,19 +68,21 @@ $bgActive: #f4f4f4;
     background-position: center;
     background-repeat: no-repeat;
     margin: auto;
-    // border: 1px solid green;
+
     @include devices(spc) {
       width: 72%;
     }
+
     @include devices(tablet) {
-      top: 100px;
+      top: 30px;
       left: 5px;
       width: calc(100% - 10px);
       margin: 50px 0;
-      height: 800px;
+      height: 640px;
       background: $bgPrimary;
-      border-radius: 40px;
+      border-radius: 10px;
     }
+
     .leftTop {
       opacity: 0;
       position: absolute;
@@ -72,13 +90,19 @@ $bgActive: #f4f4f4;
       top: 20px;
       height: 200px;
       width: 200px;
+
       @include devices(medium) {
-        left: 2%;
+        left: 13%;
         top: 0;
       }
+
       @include devices(spc) {
         left: 0%;
-        top: 0;
+        top: 0px;
+      }
+
+      @include devices(tablet) {
+        display: none;
       }
 
       .leftTopContent {
@@ -101,6 +125,14 @@ $bgActive: #f4f4f4;
           right: 0px;
           bottom: 20px;
         }
+
+        @include devices(xsmpc) {
+          width: 160px;
+          height: 160px;
+          top: 72px;
+          left: 8px;
+        }
+
         @include devices(tablet) {
           width: 120px;
           height: 120px;
@@ -109,6 +141,7 @@ $bgActive: #f4f4f4;
           right: unset;
           bottom: unset;
         }
+
         @include devices(ssp) {
           left: 20px;
           top: 30px;
@@ -121,13 +154,19 @@ $bgActive: #f4f4f4;
           color: #01382c !important;
           background: $bgActive !important;
         }
+
         i {
           left: 50%;
           top: 30%;
           transform: translate(-50%, -50%);
           position: absolute;
           font-size: 50px;
+
+          @include devices(tablet) {
+            font-size: 30px;
+          }
         }
+
         p {
           left: 50%;
           top: 65%;
@@ -138,13 +177,15 @@ $bgActive: #f4f4f4;
         }
       }
     }
+
     .right {
       opacity: 0;
       position: absolute;
       right: 0;
-      height: 400px;
+      top: 20px;
+      height: 260px;
       width: 305px;
-      background-image: url("/images/feature/right.svg");
+      background-image: url("/images/feature/right.png");
       background-size: 98vw;
       background-size: contain;
       background-position: top center;
@@ -152,23 +193,33 @@ $bgActive: #f4f4f4;
 
       @include devices(medium) {
         height: 305px;
-        // border: 3px solid black;
         right: -4%;
-        top: 0;
+        top: 2px;
       }
 
       @include devices(spc) {
         height: 276px;
         width: 231px;
         right: -15%;
-        top: 13px;
+        top: 69px;
       }
+
+      @include devices(xsmpc) {
+        height: 276px;
+        width: 231px;
+        right: -15%;
+        top: 69px;
+      }
+
       @include devices(tablet) {
         background: none;
         height: 120px;
         width: 120px;
         right: 0px;
+        top: 5px;
+        display: none;
       }
+
       .rightContent {
         transition: all 0.3s ease-in-out;
         cursor: pointer;
@@ -179,20 +230,30 @@ $bgActive: #f4f4f4;
         width: 180px;
         height: 180px;
         border-radius: 20px;
-        left: 65%;
-        top: 53%;
+        left: 64%;
+        top: 61%;
         transform: translate(-50%, -50%);
+
         @include devices(medium) {
           width: 150px;
           height: 150px;
           top: 60%;
         }
+
         @include devices(spc) {
           width: 150px;
           height: 150px;
-          left: 62%;
-          top: 57%;
+          left: 65%;
+          top: 46%;
         }
+
+        @include devices(xsmpc) {
+          width: 150px;
+          height: 150px;
+          left: 61%;
+          top: 46%;
+        }
+
         @include devices(tablet) {
           width: 120px;
           height: 120px;
@@ -205,21 +266,29 @@ $bgActive: #f4f4f4;
           top: 71%;
           transform: translate(-50%, -50%);
         }
+
         @include devices(ssp) {
           right: -30px;
         }
+
         &:hover {
           transition: all 0.3s ease-in-out;
           color: #01382c !important;
           background: $bgActive !important;
         }
+
         i {
           left: 50%;
           top: 30%;
           transform: translate(-50%, -50%);
           position: absolute;
           font-size: 50px;
+
+          @include devices(tablet) {
+            font-size: 30px;
+          }
         }
+
         p {
           left: 50%;
           top: 65%;
@@ -234,7 +303,7 @@ $bgActive: #f4f4f4;
       opacity: 0;
       position: absolute;
       left: 157px;
-      bottom: -140px;
+      bottom: -138px;
       height: 400px;
       width: 305px;
       background-image: url("/images/feature/leftbg.svg");
@@ -244,22 +313,32 @@ $bgActive: #f4f4f4;
       background-repeat: no-repeat;
 
       @include devices(medium) {
-        left: -20px;
-        bottom: -110px;
-        // border: 1px solid red;
+        left: 100px;
+        bottom: -137px;
       }
+
       @include devices(spc) {
         left: -30px;
         bottom: -110px;
       }
+
+      @include devices(xsmpc) {
+        left: -72px;
+        bottom: 23px;
+        height: 266px;
+        width: 305px;
+      }
+
       @include devices(tablet) {
         background: none;
-        top: 260px;
+        top: 167px;
         left: 56px;
         bottom: unset;
         height: 120px;
         width: 120px;
+        display: none;
       }
+
       .leftContent {
         transition: all 0.3s ease-in-out;
         cursor: pointer;
@@ -274,30 +353,44 @@ $bgActive: #f4f4f4;
         left: 34%;
         bottom: 0;
         transform: translate(-50%, -50%);
+
         @include devices(spc) {
           width: 160px;
           height: 160px;
           bottom: 20px;
         }
+
+        @include devices(xsmpc) {
+          width: 160px;
+          height: 160px;
+          bottom: -72px;
+          left: 114px;
+        }
+
         @include devices(tablet) {
           width: 120px;
           height: 120px;
+          left: 30px;
         }
-        @include devices(ssp) {
-          left: 20px;
-        }
+
         &:hover {
           transition: all 0.3s ease-in-out;
           color: #01382c !important;
           background: $bgActive !important;
         }
+
         i {
           left: 50%;
           top: 30%;
           transform: translate(-50%, -50%);
           position: absolute;
           font-size: 50px;
+
+          @include devices(tablet) {
+            font-size: 30px;
+          }
         }
+
         p {
           left: 50%;
           top: 65%;
@@ -320,28 +413,38 @@ $bgActive: #f4f4f4;
       background-size: contain;
       background-position: top center;
       background-repeat: no-repeat;
-      // border: 3px solid black;
+
       @include devices(medium) {
-        // border: 3px solid black;
         height: 280px;
         width: 300px;
-        right: 30px;
-        bottom: -130px;
+        right: 133px;
+        bottom: -199px;
       }
+
       @include devices(spc) {
         height: 280px;
         width: 300px;
         right: 0;
         bottom: -130px;
       }
+
+      @include devices(xsmpc) {
+        height: 280px;
+        width: 300px;
+        right: -23px;
+        bottom: -125px;
+      }
+
       @include devices(tablet) {
         height: 120px;
         width: 120px;
-        right: 40px;
+        right: 20px;
         top: 240px;
         bottom: unset;
         background: none;
+        display: none;
       }
+
       .bottomRightContent {
         transition: all 0.3s ease-in-out;
         cursor: pointer;
@@ -354,36 +457,47 @@ $bgActive: #f4f4f4;
         border-radius: 20px;
         right: 20px;
         bottom: 60px;
+
         @include devices(medium) {
           width: 160px;
           height: 160px;
           right: 10px;
         }
+
         @include devices(spc) {
           width: 160px;
           height: 160px;
           right: 10px;
         }
+
         @include devices(tablet) {
           width: 120px;
           height: 120px;
           right: unset;
         }
+
         @include devices(ssp) {
           right: -20px;
         }
+
         &:hover {
           transition: all 0.3s ease-in-out;
           color: #01382c !important;
           background: $bgActive !important;
         }
+
         i {
           left: 50%;
           top: 30%;
           transform: translate(-50%, -50%);
           position: absolute;
           font-size: 50px;
+
+          @include devices(tablet) {
+            font-size: 30px;
+          }
         }
+
         p {
           left: 50%;
           top: 65%;
@@ -406,12 +520,12 @@ $bgActive: #f4f4f4;
   .featureDate {
     opacity: 0;
     position: absolute;
-    // border: 1px solid red;
     z-index: 3;
     top: 180px;
     left: 36%;
     font-size: 16px;
     color: white;
+
     @include devices(tablet) {
       top: 460px;
       left: 20px;
@@ -421,39 +535,44 @@ $bgActive: #f4f4f4;
   .featureHeading {
     opacity: 0;
     position: absolute;
-    // border: 1px solid red;
     z-index: 3;
     top: 230px;
     left: 36%;
     font-size: 24px;
     color: white;
+
     @include devices(tablet) {
-      top: 460px;
+      top: 382px;
       left: 30px;
+      // top: 50px;
+      margin-top: 40px;
     }
   }
+
   .committeeList {
     opacity: 0;
     position: absolute;
-    // border: 1px solid red;
     z-index: 4;
     top: 280px;
     left: 36%;
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 40%;
+    width: 39%;
+
     @include devices(tablet) {
-      top: 520px;
+      top: 470px;
       left: 30px;
       width: 80%;
     }
+
     li {
       background-color: white;
       margin-bottom: 10px;
       display: flex;
       align-items: center;
       border-radius: 6px;
+
       a {
         text-decoration: none;
         color: $bgSecondary;
@@ -469,21 +588,21 @@ $bgActive: #f4f4f4;
   .featureTitle {
     opacity: 0;
     position: absolute;
-    // border: 1px solid red;
     z-index: 4;
     top: 210px;
     left: 36%;
     font-size: 22px;
     color: white;
+
     @include devices(tablet) {
       top: 490px;
       left: 20px;
     }
   }
+
   .featureDescription {
     opacity: 0;
     position: absolute;
-    // border: 1px solid red;
     z-index: 4;
     top: 260px;
     left: 36%;
@@ -497,12 +616,14 @@ $bgActive: #f4f4f4;
     -webkit-line-clamp: 10;
     -webkit-box-orient: vertical;
     overflow: hidden;
+
     @include devices(tablet) {
       top: 560px;
       left: 20px;
       max-width: 85%;
     }
   }
+
   .featureReadMore {
     opacity: 0;
     color: white;
@@ -513,42 +634,105 @@ $bgActive: #f4f4f4;
     background: #01382c;
     padding: 5px 15px;
     border-radius: 4px;
+
     a {
       cursor: pointer;
       text-decoration: none;
       color: white;
     }
+
     @include devices(tablet) {
       bottom: 200px;
       left: 20px;
       top: unset;
     }
   }
+
+  .mobileMenu {
+    @include devices(pc) {
+      display: none;
+    }
+
+    @include devices(tablet) {
+      padding: 30px 10px;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+      column-gap: 10px;
+      cursor: pointer;
+      position: relative;
+      color: white;
+      width: calc(100% - 20px);
+      flex-wrap: wrap;
+      row-gap: 20px;
+
+      a {
+        width: 130px;
+        height: 120px;
+        background: #01382c;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 4px;
+        .mobileMenuItem {
+          position: relative;
+          font-size: 30px;
+          background: #01382c !important;
+          border-radius: 20px;
+          color: white !important;
+
+          i {
+            padding-top: 20px;
+            left: 30px;
+            font-size: 30px;
+            text-align: center;
+
+          }
+
+          .infoText {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 16px;
+            white-space: nowrap;
+          }
+        }
+
+      }
+    }
+
+  }
 }
+
 .featureDateAm {
   animation: innerBgAm 0.3s ease-in forwards;
   animation-delay: 1.1s;
 }
+
 .featureTitleAm {
   animation: innerBgAm 0.3s ease-in forwards;
   animation-delay: 1.4s;
 }
+
 .featureDescriptionAm {
   animation: innerBgAm 0.3s ease-in forwards;
   animation-delay: 1.6s;
 }
+
 .featureReadMore {
   animation: innerBgAm 0.3s ease-in forwards;
   animation-delay: 1.9s;
 }
+
 .startAnimationLeftTop {
   animation: leftTopAM 0.6s ease-in forwards;
   animation-delay: 1s;
 }
+
 .startAnimation {
   animation: innerBgAm 0.6s ease-in forwards;
   animation-delay: 0.4s;
 }
+
 .startAnimationRight {
   animation: rightAm 0.6s ease-in forwards;
   animation-delay: 0.6s;
@@ -558,10 +742,12 @@ $bgActive: #f4f4f4;
   animation: lefttAm 0.6s ease-in forwards;
   animation-delay: 0.8s;
 }
+
 .startAnimationbottomRight {
   animation: rightBottomAm 0.6s ease-in forwards;
   animation-delay: 0.98s;
 }
+
 @keyframes innerBgAm {
   0% {
     opacity: 0;
@@ -615,6 +801,7 @@ $bgActive: #f4f4f4;
     z-index: 1;
   }
 }
+
 @keyframes leftTopAM {
   0% {
     opacity: 0;

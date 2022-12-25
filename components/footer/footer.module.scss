@@ -139,16 +139,26 @@
   }
 
   .contacSection {
+    .contactText{
+      padding-top: 20px;
+      color: $colorPrimary;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      @include devices(sp) {
+        text-align: center;
+      }
+    }
     opacity: 0;
     ul {
-      width: 850px;
-      margin: 20px auto 0;
+      width: 480px;
+      margin: 10px auto 0;
       padding: 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
       list-style: none;
-      column-gap: 30px;
+      column-gap: 50px;
       @include devices(tablet) {
         width: 70%;
         column-gap: 40px;
@@ -193,6 +203,7 @@
             }
           }
         }
+        
       }
     }
   }

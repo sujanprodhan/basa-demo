@@ -18,6 +18,7 @@
     background-color: #004737;
     border-radius: 0 20px 20px 20px;
     margin-top: 180px;
+    
   }
 
   .title {
@@ -60,9 +61,10 @@
     }
 
     @include devices(sp) {
-      flex-direction: column;
-      width: 90%;
-      column-gap: 0;
+      // flex-direction: column;
+      width: 98%;
+      column-gap: 10px;
+      padding-top: 0px;
     }
 
     .gallaryItem {
@@ -74,7 +76,8 @@
       // border-radius: 10px;
 
       @include devices(sp) {
-        width: 90%;
+        width: calc(50% - 10px);
+        height: 160px;
       }
 
       i {

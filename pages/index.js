@@ -14,14 +14,13 @@ export default function Home() {
     <>
       {/* <Header /> */}
       <HeaderNew />
-      <Story />
-      
-      <IntroTopBG />
-      <Intro />
+       <Story />     
+      <IntroTopBG />      
+      <Intro />     
       <Feature />
       <PhotoGalary />
       <VideoGallary />
-      <Footer /> 
+      <Footer />
     </>
   );
 }

@@ -312,7 +312,7 @@ export default function Home() {
                 <div className={style.fifthBox}> </div>
                 <div className={style.sixthBox}> </div>
                 <div className={style.seventhBox}>
-                  <i class="fa-solid fa-money-bill"></i>
+                  <i className="fa-solid fa-money-bill"></i>
                 </div>
                 <a href="#" target="_blank">
                   <div className={style.eighthBoxMenu}>
@@ -321,12 +321,12 @@ export default function Home() {
                   </div>
                 </a>
                 <div className={style.ninethBox}>
-                  <i class="fa-solid fa-users-viewfinder"></i>
+                  <i className="fa-solid fa-users-viewfinder"></i>
                 </div>
 
                 <a href="#" target="_blank">
                   <div className={style.tenthBoxMenu}>
-                    {/* <i class="fa-solid fa-users-gear"></i> */}
+                    {/* <i className="fa-solid fa-users-gear"></i> */}
                     <p>
                       জনসেবায় <br />
                       এসোসিয়েশন{" "}
@@ -343,7 +343,7 @@ export default function Home() {
                   </div>
                 </a>
                 <div className={style.fourteenBox}>
-                  <i class="fa-sharp fa-solid fa-angles-right"></i>
+                  <i className="fa-sharp fa-solid fa-angles-right"></i>
                 </div>
 
                 <div
